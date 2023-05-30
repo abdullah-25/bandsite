@@ -1,0 +1,46 @@
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+@use "./main.css" as *;
+
+body {
+  @include resets;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  background: $primary-color-BandSite-black;
+  justify-content: center;
+  align-items: center;
+  @include resets;
+
+  &__title {
+    @include mobile-title-font($primary-color-white);
+
+    // color: $primary-color;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 2rem;
+    list-style: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    padding: 32px;
+    @include mobile-page-header-font($primary-color-white);
+
+    &--active {
+      text-decoration: underline $primary-color-white;
+    }
+
+    &:hover {
+      @extend .nav__link--active;
+    }
+  }
+}

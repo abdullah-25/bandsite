@@ -1,4 +1,111 @@
+@use "./variables" as *;
+
 @mixin resets {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+}
+
+//desktop and tablet font style
+
+@mixin desktop-tablet-title-font($color) {
+  font-family: $site-font;
+  text-transform: capitalize;
+  color: $color;
+  font-size: 3.75rem;
+  line-height: 4.25rem;
+  font-weight: bold 700;
+}
+@mixin desktop-tablet-page-header-font($color) {
+  font-family: $site-font;
+  color: $color;
+  font-size: 3.75rem;
+  line-height: 4.25rem;
+  font-weight: bold;
+}
+@mixin desktop-tablet-sub-header-font($color) {
+  font-family: $site-font;
+  color: $color;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+@mixin desktop-tablet-body-font($color) {
+  font-family: $site-font;
+  color: $color;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 400;
+}
+@mixin desktop-tablet-footer-font($color) {
+  font-family: $site-font;
+  color: $color;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: normal;
+}
+@mixin desktop-tablet-labels-btn($color) {
+  font-family: $site-font;
+  color: $color;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
+// mobile fonts
+
+@mixin mobile-title-font($color) {
+  font-family: $site-font;
+  text-transform: capitalize;
+  color: $color;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+@mixin mobile-page-header-font($color) {
+  font-family: $site-font;
+  color: $color;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+@mixin mobile-sub-header-font($color) {
+  font-family: $site-font;
+  color: $color;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+
+@mixin mobile-body-font($color) {
+  font-family: $site-font;
+  color: $color;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+@mixin mobile-footer-font($color) {
+  font-family: $site-font;
+  color: $color;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+
+@mixin mobile-labels-btn-font($color) {
+  font-family: $site-font;
+  color: $color;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
+// flexbox
+
+@mixin flex($direction, $align-items, $justify-content) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align-items;
+  justify-content: $justify-content;
 }
