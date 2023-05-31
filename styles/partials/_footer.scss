@@ -1,0 +1,47 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.footer {
+  background: $primary-color-BandSite-black;
+  color: $primary-color-white;
+  width: 100%;
+
+  &__bigcontainer {
+    padding-top: 1rem;
+    padding-left: 1rem;
+  }
+  &__container {
+    padding-bottom: 1rem;
+  }
+  &__container--text {
+    @include mobile-title-font($primary-color-white);
+  }
+  &__socialmediacontainer {
+    padding-bottom: 1rem;
+  }
+  &__socialmediaicon {
+    padding-right: 2rem;
+  }
+  &__namecontainer {
+    padding-bottom: 1rem;
+  }
+  &__info {
+    @include mobile-sub-header-font($primary-color-white);
+  }
+  &__subinfo {
+    @include mobile-body-font($primary-color-white);
+  }
+  &__email {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  &__logo {
+    @include mobile-title-font($primary-color-white);
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+  }
+
+  &__logoinfo {
+    padding-bottom: 1rem;
+  }
+}

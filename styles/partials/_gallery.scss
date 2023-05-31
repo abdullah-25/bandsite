@@ -1,0 +1,22 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.photogallery {
+  background: $secondary-color-mercury;
+
+  &__container {
+    padding-top: 1rem;
+    padding-left: 1rem;
+    &--text {
+      @include mobile-page-header-font($secondary-color-BandSite-darkblack);
+    }
+  }
+  &__imagecontainer {
+    padding: 1rem;
+  }
+  &__image {
+    width: 25rem;
+    height: auto;
+    padding-bottom: 2rem;
+  }
+}

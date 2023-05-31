@@ -1,7 +1,7 @@
-@use "./partials/variables" as *;
-@use "./partials/mixins" as *;
-@use "./main.css" as *;
+@use "./variables" as *;
+@use "./mixins" as *;
 
+html,
 body {
   @include resets;
 }
@@ -10,33 +10,35 @@ body {
   display: flex;
   flex-direction: column;
   background: $primary-color-BandSite-black;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   @include resets;
 
   &__title {
     @include mobile-title-font($primary-color-white);
+    padding-top: 2rem;
+    padding-bottom: 1rem;
 
-    // color: $primary-color;
+    //color: $primary-color;
   }
 }
 
 .nav {
+  padding: 1rem;
   &__list {
     display: flex;
-    justify-content: space-between;
-    margin: 0;
-    padding: 0 2rem;
+    padding: 5rem;
     list-style: none;
+    @include resets;
   }
 
   &__link {
     text-decoration: none;
-    padding: 32px;
     @include mobile-page-header-font($primary-color-white);
 
     &--active {
-      text-decoration: underline $primary-color-white;
+      text-decoration: underline;
+      color: $primary-color-white;
     }
 
     &:hover {

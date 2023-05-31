@@ -1,0 +1,16 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+
+.hero {
+  background: url("../../Assets/Images/hero-bio.jpg");
+  background-size: cover;
+
+  height: 60vh;
+  &__container {
+    padding-left: 4rem;
+    padding-top: 12rem;
+  }
+  &__heading {
+    @include mobile-page-header-font($primary-color-white);
+  }
+}

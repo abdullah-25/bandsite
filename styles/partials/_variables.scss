@@ -8,4 +8,25 @@ $secondary-color-BandSite-darkblack: #000000;
 $secondary-color-mercury: #e1e1e1;
 $secondary-color-alabaster: #fafafa;
 
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../Assets/Fonts/AvenirNextLTPro-Bold.otf") format("otf");
+  font-size: 700;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../Assets/Fonts/AvenirNextLTPro-demi.otf") format("otf");
+  font-size: 400;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../Assets/Fonts/AvenirNextLTPro-Regular.otf") format("otf");
+  font-weight: 600;
+  font-weight: normal;
+}
+
 $site-font: "Avenir Next";
