@@ -5,22 +5,31 @@
   margin: 0;
   box-sizing: border-box;
 }
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
 
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
 //desktop and tablet font style
 
-@mixin desktop-tablet-title-font($color) {
-  font-family: $site-font;
-  text-transform: capitalize;
-  color: $color;
-  font-size: 3.75rem;
-  line-height: 4.25rem;
-  font-weight: bold 700;
-}
 @mixin desktop-tablet-page-header-font($color) {
   font-family: $site-font;
   color: $color;
   font-size: 3.75rem;
   line-height: 4.25rem;
+  font-weight: 700;
+}
+@mixin desktop-tablet-section-header-font($color) {
+  font-family: $site-font;
+  color: $color;
+  font-size: 2.25rem;
+  line-height: 2.75rem;
   font-weight: bold;
 }
 @mixin desktop-tablet-sub-header-font($color) {
@@ -50,18 +59,17 @@
   color: $color;
   font-size: 0.75rem;
   line-height: 1.25rem;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 // mobile fonts
 
 @mixin mobile-title-font($color) {
   font-family: $site-font;
-  text-transform: capitalize;
   color: $color;
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 @mixin mobile-page-header-font($color) {
@@ -71,12 +79,13 @@
   line-height: 2rem;
   font-weight: 700;
 }
+
 @mixin mobile-sub-header-font($color) {
   font-family: $site-font;
   color: $color;
   font-size: 0.875rem;
   line-height: 1.375rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 @mixin mobile-body-font($color) {

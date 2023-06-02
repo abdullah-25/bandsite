@@ -1,0 +1,76 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.about {
+  background-color: white;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  &__textcontainer {
+    &--heading {
+      @include mobile-page-header-font($primary-color-BandSite-black);
+      padding-bottom: 1rem;
+      padding-top: 1.5rem;
+
+      @include tablet {
+        padding-top: 2.25rem;
+        padding-left: 2.25rem;
+        padding-bottom: 2.25rem;
+        @include desktop-tablet-section-header-font(
+          $primary-color-BandSite-black
+        );
+      }
+    }
+  }
+  &__imgcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet {
+      padding-left: 6rem;
+      padding-right: 6rem;
+    }
+
+    &--img {
+      width: 100%;
+      height: auto;
+      padding-bottom: 1rem;
+    }
+  }
+  &__quotecontainer {
+    @include tablet {
+      padding-left: 6rem;
+      padding-right: 6rem;
+    }
+    &--text {
+      @include mobile-sub-header-font($secondary-color-BandSite-darkblack);
+
+      @include tablet {
+        @include desktop-tablet-sub-header-font($primary-color-BandSite-black);
+      }
+    }
+  }
+  &__subheadingcontainer {
+    &--text {
+      @include mobile-body-font($secondary-color-BandSite-darkblack);
+      font-size: 1rem;
+      @include tablet {
+        padding-left: 6rem;
+        padding-right: 6rem;
+        @include desktop-tablet-sub-header-font($primary-color-BandSite-black);
+      }
+    }
+    &--paragraph {
+      @include mobile-body-font($primary-color-BandSite-black);
+
+      @include tablet {
+        padding-left: 6rem;
+        padding-right: 6rem;
+        @include desktop-tablet-body-font($primary-color-BandSite-black);
+        display: flex;
+      }
+    }
+  }
+}

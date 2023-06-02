@@ -7,17 +7,21 @@ body {
 }
 
 .header {
-  display: flex;
-  flex-direction: column;
   background: $primary-color-BandSite-black;
-  justify-content: space-between;
-  align-items: center;
+
   @include resets;
 
+  @include tablet {
+    display: flex;
+    padding-left: 2.25rem;
+  }
+
   &__title {
-    @include mobile-title-font($primary-color-white);
-    padding-top: 2rem;
-    padding-bottom: 1rem;
+    max-height: 1.25rem;
+    //max-width: 7.5rem;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
 
     //color: $primary-color;
   }
@@ -25,20 +29,43 @@ body {
 
 .nav {
   padding: 1rem;
+
   &__list {
     display: flex;
-    padding: 5rem;
+    justify-content: space-around;
+
     list-style: none;
     @include resets;
+
+    @include tablet {
+      padding-left: 1rem;
+    }
+  }
+
+  a nav__link nav__link--active {
+    color: #e6e6e6; /* Mercury color for inactive links */
+    text-decoration: none; /* Remove the underline */
+    font-weight: normal; /* Set the font weight to normal */
+    position: relative; /* Set the position to relative for positioning the underline */
+  }
+  a.active,
+  a:hover {
+    color: #ffffff; /* White color for active and hover links */
+    font-weight: bold; /* Set the font weight to bold */
   }
 
   &__link {
     text-decoration: none;
-    @include mobile-page-header-font($primary-color-white);
+    @include mobile-sub-header-font($primary-color-white);
+
+    @include tablet {
+      padding-left: 2.25rem;
+    }
 
     &--active {
-      text-decoration: underline;
-      color: $primary-color-white;
+      font-weight: bold;
+      border-bottom: #ffffff;
+      width: min-content; // Set the minimum width to 1 grid column unit and match the width of the text
     }
 
     &:hover {

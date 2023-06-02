@@ -2,21 +2,59 @@
 @use "./mixins" as *;
 
 .photogallery {
-  background: $secondary-color-mercury;
+  background: $secondary-color-alabaster;
 
   &__container {
-    padding-top: 1rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
     padding-left: 1rem;
+
+    @include tablet {
+      padding-left: 2.25rem;
+      @include desktop-tablet-section-header-font(
+        $primary-color-BandSite-black
+      );
+    }
+
     &--text {
-      @include mobile-page-header-font($secondary-color-BandSite-darkblack);
+      @include mobile-page-header-font($primary-color-BandSite-black);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      @include tablet {
+        @include desktop-tablet-section-header-font(
+          $primary-color-BandSite-black
+        );
+      }
     }
   }
   &__imagecontainer {
-    padding: 1rem;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1rem;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-left: 2.25rem;
+    }
   }
   &__image {
-    width: 25rem;
+    width: 100%;
     height: auto;
     padding-bottom: 2rem;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      width: 30%;
+      margin: 3vh 0;
+    }
   }
 }
