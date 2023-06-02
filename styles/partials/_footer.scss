@@ -8,6 +8,11 @@
   @include tablet {
     padding-left: 1.5rem;
   }
+  @include desktop {
+    padding-left: 8.125rem;
+    padding-right: 5.125rem;
+    box-sizing: border-box;
+  }
 
   &__getintouchcontainer {
     @include tablet {
@@ -59,6 +64,9 @@
       padding-right: 3rem;
       padding-top: 3rem;
     }
+    @include desktop {
+      // padding-right: 8.125rem;
+    }
   }
 
   &__socialmediaicon {
@@ -96,5 +104,8 @@
   &__logoinfo {
     @include mobile-body-font($primary-color-white);
     padding-bottom: 1rem;
+    @include tablet {
+      padding-bottom: 2.25rem;
+    }
   }
 }

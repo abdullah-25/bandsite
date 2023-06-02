@@ -16,6 +16,15 @@
       );
     }
 
+    @include desktop {
+      padding-left: 8.125rem;
+      padding-right: 8.125rem;
+      padding-top: 3rem;
+      @include desktop-tablet-section-header-font(
+        $primary-color-BandSite-black
+      );
+    }
+
     &--text {
       @include mobile-page-header-font($primary-color-BandSite-black);
       display: flex;
@@ -44,11 +53,18 @@
       justify-content: space-between;
       padding-left: 2.25rem;
     }
+
+    @include desktop {
+      padding-left: 8.125rem;
+      padding-right: 8.125rem;
+    }
   }
   &__image {
     width: 100%;
     height: auto;
     padding-bottom: 2rem;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
 
     @include tablet {
       display: flex;
@@ -56,5 +72,8 @@
       width: 30%;
       margin: 3vh 0;
     }
+  }
+  &__image:hover {
+    filter: grayscale(0%);
   }
 }

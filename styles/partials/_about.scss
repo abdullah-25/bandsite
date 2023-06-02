@@ -7,6 +7,9 @@
   padding-right: 1rem;
 
   &__textcontainer {
+    @include desktop {
+      padding-left: 4rem;
+    }
     &--heading {
       @include mobile-page-header-font($primary-color-BandSite-black);
       padding-bottom: 1rem;
@@ -37,12 +40,23 @@
       width: 100%;
       height: auto;
       padding-bottom: 1rem;
+      @include desktop {
+        padding-left: 4rem;
+        padding-right: 4rem;
+        box-sizing: border-box;
+      }
     }
   }
   &__quotecontainer {
     @include tablet {
       padding-left: 6rem;
       padding-right: 6rem;
+    }
+    @include desktop {
+      padding-left: 10.125rem;
+      padding-right: 8.125rem;
+      padding-top: 1.5rem;
+      padding-bottom: 2.5rem;
     }
     &--text {
       @include mobile-sub-header-font($secondary-color-BandSite-darkblack);
@@ -53,6 +67,11 @@
     }
   }
   &__subheadingcontainer {
+    @include desktop {
+      padding-left: 4rem;
+      padding-right: 8.125rem;
+      padding-bottom: 2.5rem;
+    }
     &--text {
       @include mobile-body-font($secondary-color-BandSite-darkblack);
       font-size: 1rem;
@@ -71,6 +90,12 @@
         @include desktop-tablet-body-font($primary-color-BandSite-black);
         display: flex;
       }
+    }
+  }
+  &__secondsubheadingcontainer {
+    @include desktop {
+      padding: 0;
+      display: flex;
     }
   }
 }
