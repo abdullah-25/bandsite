@@ -93,6 +93,10 @@
     }
   }
   &__secondsubheadingcontainer {
+    @include tablet {
+      padding: 0;
+      display: flex;
+    }
     @include desktop {
       padding: 0;
       display: flex;
