@@ -9,18 +9,20 @@ body {
 .topnav {
   background: $primary-color-BandSite-black;
   overflow: hidden;
-  height: 11vh;
+  height: 10vh;
 
   @include tablet {
     display: flex;
     padding-left: 2.25rem;
+    height: 9vh;
 
     &__logo {
       padding-right: 2.8rem;
-      padding-top: 1rem;
-      padding-left: 1.3rem;
+      //padding-top: 1rem;
+      //padding-left: 1.3rem;
     }
   }
+
   @include desktop {
     @include desktop-tablet-labels-btn(white);
     height: 8vh;
@@ -30,6 +32,7 @@ body {
 
     &__logo {
       padding-right: 2.8rem;
+      padding-left: 2.8rem;
     }
 
     //padding: 1rem;
@@ -49,21 +52,21 @@ body {
     @include mobile-sub-header-font(white);
     //float: left;
 
-    color: #f2f2f2;
+    //color: #f2f2f2;
 
     text-decoration: none;
     display: flex;
     justify-content: space-around;
     //font-size: 17px;
-    border-bottom: 3px solid transparent;
-    //padding-left: 5rem;
+
     padding-bottom: 0.7rem;
 
     width: 100%;
 
-    &:hover {
-      @extend .topnav__link--active;
-    }
+    //&:hover:not(&--active) {
+    //  border-bottom: 3px solid white;
+    // width: 10%;
+    //}
 
     &--active {
       border-bottom: 3px solid white;
@@ -80,19 +83,43 @@ body {
     }
 
     @include tablet {
-      height: 1vh;
-      padding-top: 2rem;
-      padding-bottom: 3rem;
-      padding-right: 2rem;
-      padding-left: 2rem;
-    }
+      display: flex;
+      justify-content: flex-start;
+      padding-right: 6rem;
+      padding-top: 0.8rem;
+      padding-bottom: 0rem;
 
-    @include desktop {
-      padding-top: 0.6rem;
-      //padding-bottom: 5rem;
-      padding-right: 4rem;
-      padding-left: 3rem;
-      width: 10%;
+      &--active {
+        content: ""; /* This is necessary for the pseudo element to work. */
+        padding-bottom: 3rem;
+
+        // margin: 0 auto; /* This will center the border. */
+        width: 0%; /* Change this to whatever width you want. */
+        //padding-top: 20px; /* This creates some space between the element and the border. */
+      }
     }
+    //display: flex;
+    //justify-content: flex-start;
+    //align-items: flex-start;
+    //height: 1vh;
+    //padding-top: 0.9rem;
+    //padding-bottom: 1.5rem;
+    //padding-right: 12rem;
+    //padding-left: 2rem;
+    //width: 0%;
+    @include desktop {
+      padding-top: 0.1rem;
+    }
+  }
+
+  @include desktop {
+    height: 5vh;
+    //padding-top: 0.6rem;
+    //padding-bottom: 5rem;
+    padding-right: 4rem;
+    padding-left: 3rem;
+    //padding-bottom: 0.4rem;
+
+    width: 100%;
   }
 }

@@ -91,6 +91,10 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
+  a {
+    text-decoration: none;
+  }
+
   &__bottomlogo {
     @include mobile-title-font($primary-color-white);
     padding-top: 1rem;
