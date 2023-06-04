@@ -6,76 +6,90 @@ body {
   @include resets;
 }
 
-.header {
+.topnav {
   background: $primary-color-BandSite-black;
-
-  @include resets;
+  overflow: hidden;
+  height: 11vh;
 
   @include tablet {
     display: flex;
     padding-left: 2.25rem;
+
+    &__logo {
+      padding-right: 2.8rem;
+      padding-top: 1rem;
+      padding-left: 1.3rem;
+    }
   }
   @include desktop {
-    padding: 1rem;
+    @include desktop-tablet-labels-btn(white);
+    height: 8vh;
+    padding-top: 1.5rem;
+    padding-left: 5rem;
+    &__logo {
+      padding-right: 2.8rem;
+      padding-top: 1rem;
+      padding-left: 1.3rem;
+    }
+
+    //padding: 1rem;
   }
 
-  &__title {
-    max-height: 1.25rem;
-    //max-width: 7.5rem;
-    padding-top: 1rem;
+  &__logo {
     display: flex;
+    align-items: center;
     justify-content: center;
-
-    //color: $primary-color;
-    @include desktop {
-      padding-left: 5rem;
-    }
-  }
-}
-
-.nav {
-  padding: 1rem;
-
-  &__list {
-    display: flex;
-    justify-content: space-around;
-
-    list-style: none;
-    @include resets;
-
-    @include tablet {
-      padding-left: 1rem;
-    }
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: white;
   }
 
-  a nav__link nav__link--active {
-    color: #e6e6e6; /* Mercury color for inactive links */
-    text-decoration: none; /* Remove the underline */
-    font-weight: normal; /* Set the font weight to normal */
-    position: relative; /* Set the position to relative for positioning the underline */
-  }
-  a.active,
-  a:hover {
-    color: #ffffff; /* White color for active and hover links */
-    font-weight: bold; /* Set the font weight to bold */
-  }
-
+  /* Style the links inside the navigation bar */
   &__link {
-    text-decoration: none;
-    @include mobile-sub-header-font($primary-color-white);
+    @include mobile-sub-header-font(white);
+    //float: left;
 
-    @include tablet {
-      padding-left: 2.25rem;
+    color: #f2f2f2;
+
+    text-decoration: none;
+    //font-size: 17px;
+    border-bottom: 3px solid transparent;
+    padding-left: 5rem;
+    padding-bottom: 0.7rem;
+
+    width: 100%;
+
+    &:hover {
+      @extend .topnav__link--active;
     }
 
     &--active {
-      font-weight: bold;
-      border-bottom: #ffffff;
-      width: min-content; // Set the minimum width to 1 grid column unit and match the width of the text
+      border-bottom: 3px solid white;
+      font-style: bold;
+      color: white;
+    }
+    &--nothover {
+      color: $secondary-color-mercury;
     }
 
-    &:hover {
-      @extend .nav__link--active;
+    &-outside-container {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    @include tablet {
+      height: 1vh;
+      padding-top: 2rem;
+      padding-bottom: 3rem;
+      padding-right: 2rem;
+      padding-left: 2rem;
+    }
+
+    @include desktop {
+      padding-top: 1rem;
+      padding-bottom: 2.2rem;
+      padding-right: 2rem;
+      padding-left: 2rem;
     }
   }
 }

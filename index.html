@@ -12,23 +12,18 @@
   </head>
   <body>
     <!-- Header section -->
-    <header class="header">
-      <div class="header__title">
-        <img class = 'header__title--logo' src = './Assets/Logo/Logo-bandsite.svg' />
-      </div>
 
-      <!-- Navigation -->
-      <nav class="nav">
-        <ul class="nav__list">
-          <li class="nav__list-item">
-            <a class="nav__link nav__link--active" href="">Biography</a>
-          </li>
-          <li class="nav__list-item">
-            <a class="nav__link" href="">Shows</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <div class="topnav">
+      <div class="topnav__logo">
+        <a href="./index.html" ><img class = 'header__title--logo' src = './Assets/Logo/Logo-bandsite.svg' /></a>
+      </div>
+      <div class="topnav__link-outside-container">
+      <a href="#about" class="topnav__link topnav__link--active" >Biography</a>
+      <a href="#shows" class = 'topnav__link topnav__link--nothover'>Shows</a>
+      </div>
+    </div>
+
+
 
     <section class="hero">
       <div class="hero__container">
@@ -36,7 +31,7 @@
       </div>
     </section>
 
-    <section class="about">
+    <section id = "#about" class="about" >
       <div class="about__textcontainer">
         <div class="about__textcontainer--heading">About the Musicians</div>
       </div>
