@@ -64,6 +64,20 @@
       @include tablet {
         @include desktop-tablet-sub-header-font($primary-color-BandSite-black);
       }
+      @include desktop {
+        padding-right: 18rem;
+      }
+    }
+    &--quoteby {
+      @include mobile-sub-header-font($secondary-color-BandSite-darkblack);
+      @include tablet {
+        @include desktop-tablet-body-font($primary-color-BandSite-black);
+        font-weight: bold;
+        padding-bottom: 1.5rem;
+      }
+      @include desktop {
+        padding-bottom: 0;
+      }
     }
   }
   &__subheadingcontainer {
@@ -80,13 +94,16 @@
         padding-right: 6rem;
         @include desktop-tablet-sub-header-font($primary-color-BandSite-black);
       }
+      @include desktop {
+        padding-bottom: 1rem;
+      }
     }
     &--paragraph {
       @include mobile-body-font($primary-color-BandSite-black);
 
       @include tablet {
-        padding-left: 6rem;
-        padding-right: 6rem;
+        //padding-left: 6rem;
+        padding-right: 1.5rem;
         @include desktop-tablet-body-font($primary-color-BandSite-black);
         display: flex;
       }
@@ -94,13 +111,13 @@
   }
   &__secondsubheadingcontainer {
     @include tablet {
-      padding: 0;
+      padding-left: 6rem;
+      padding-right: 6rem;
       display: flex;
       padding-bottom: 1.5rem;
     }
     @include desktop {
-      padding: 0;
-      display: flex;
+      padding-right: 0;
     }
   }
 }

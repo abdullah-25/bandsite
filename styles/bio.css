@@ -21,6 +21,7 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 .topnav {
@@ -77,7 +78,7 @@ body {
   width: 100%;
 }
 .topnav__link--active {
-  border-bottom: 3px solid white;
+  border-bottom: 0.1875rem solid white;
   font-style: bold;
   color: white;
 }
@@ -91,16 +92,26 @@ body {
     padding-right: 6rem;
     padding-top: 0.8rem;
     padding-bottom: 0rem;
+    width: -moz-fit-content;
+    width: fit-content;
   }
   .topnav__link--active {
     content: ""; /* This is necessary for the pseudo element to work. */
     padding-bottom: 3rem;
-    width: 0%; /* Change this to whatever width you want. */
+    width: 0%;
   }
 }
 @media screen and (min-width: 1280px) {
   .topnav__link {
     padding-top: 0.1rem;
+    padding-bottom: 0rem;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .topnav__link--active {
+    content: ""; /* This is necessary for the pseudo element to work. */
+    padding-bottom: 3.1rem;
+    width: 0%;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -108,8 +119,15 @@ body {
     height: 5vh;
     padding-right: 4rem;
     padding-left: 3rem;
-    width: 100%;
   }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 .hero {
@@ -164,14 +182,26 @@ body {
     color: #ffffff;
     font-size: 3.75rem;
     line-height: 4.25rem;
-    font-weight: 700;
+    font-weight: 700 bold;
   }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 .footer {
   background: #323232;
   color: #ffffff;
   width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 @media screen and (min-width: 768px) {
   .footer {
@@ -181,8 +211,6 @@ body {
 @media screen and (min-width: 1280px) {
   .footer {
     padding-left: 8.125rem;
-    padding-right: 5.125rem;
-    box-sizing: border-box;
   }
 }
 @media screen and (min-width: 768px) {
@@ -210,7 +238,7 @@ body {
     color: #ffffff;
     font-size: 2.25rem;
     line-height: 2.75rem;
-    font-weight: bold;
+    font-weight: 700;
     padding-right: 2.25rem;
     padding-top: 2.25rem;
   }
@@ -244,6 +272,11 @@ body {
     display: block;
     padding-right: 3rem;
     padding-top: 3rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer__sidelogo {
+    padding-right: 8.5rem;
   }
 }
 .footer__socialmediaicon {
@@ -323,7 +356,7 @@ body {
     color: #323232;
     font-size: 2.25rem;
     line-height: 2.75rem;
-    font-weight: bold;
+    font-weight: 700;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -335,7 +368,7 @@ body {
     color: #323232;
     font-size: 2.25rem;
     line-height: 2.75rem;
-    font-weight: bold;
+    font-weight: 700;
   }
 }
 .photogallery__container--text {
@@ -354,7 +387,7 @@ body {
     color: #323232;
     font-size: 2.25rem;
     line-height: 2.75rem;
-    font-weight: bold;
+    font-weight: 700;
   }
 }
 .photogallery__imagecontainer {
@@ -384,6 +417,7 @@ body {
   width: 100%;
   height: auto;
   padding-bottom: 2rem;
+  cursor: pointer;
   filter: grayscale(100%);
   transition: filter 0.3s ease;
 }
@@ -427,7 +461,7 @@ body {
     color: #323232;
     font-size: 2.25rem;
     line-height: 2.75rem;
-    font-weight: bold;
+    font-weight: 700;
   }
 }
 .about__imgcontainer {
@@ -485,6 +519,34 @@ body {
   }
 }
 @media screen and (min-width: 1280px) {
+  .about__quotecontainer--text {
+    padding-right: 18rem;
+  }
+}
+.about__quotecontainer--quoteby {
+  font-family: "Avenir Next";
+  color: #000000;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  .about__quotecontainer--quoteby {
+    font-family: "Avenir Next";
+    color: #323232;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+    font-weight: bold;
+    padding-bottom: 1.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .about__quotecontainer--quoteby {
+    padding-bottom: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
   .about__subheadingcontainer {
     padding-left: 4rem;
     padding-right: 8.125rem;
@@ -510,6 +572,11 @@ body {
     font-weight: 600;
   }
 }
+@media screen and (min-width: 1280px) {
+  .about__subheadingcontainer--text {
+    padding-bottom: 1rem;
+  }
+}
 .about__subheadingcontainer--paragraph {
   font-family: "Avenir Next";
   color: #323232;
@@ -519,8 +586,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   .about__subheadingcontainer--paragraph {
-    padding-left: 6rem;
-    padding-right: 6rem;
+    padding-right: 1.5rem;
     font-family: "Avenir Next";
     color: #323232;
     font-size: 0.875rem;
@@ -531,14 +597,14 @@ body {
 }
 @media screen and (min-width: 768px) {
   .about__secondsubheadingcontainer {
-    padding: 0;
+    padding-left: 6rem;
+    padding-right: 6rem;
     display: flex;
     padding-bottom: 1.5rem;
   }
 }
 @media screen and (min-width: 1280px) {
   .about__secondsubheadingcontainer {
-    padding: 0;
-    display: flex;
+    padding-right: 0;
   }
 }/*# sourceMappingURL=bio.css.map */

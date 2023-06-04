@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 @mixin tablet {
   @media screen and (min-width: $tablet-breakpoint) {
@@ -16,21 +17,21 @@
     @content;
   }
 }
-//desktop and tablet font style
 
+//desktop and tablet font style
 @mixin desktop-tablet-page-header-font($color) {
   font-family: $site-font;
   color: $color;
   font-size: 3.75rem;
   line-height: 4.25rem;
-  font-weight: 700;
+  font-weight: 700 bold;
 }
 @mixin desktop-tablet-section-header-font($color) {
   font-family: $site-font;
   color: $color;
   font-size: 2.25rem;
   line-height: 2.75rem;
-  font-weight: bold;
+  font-weight: 700;
 }
 @mixin desktop-tablet-sub-header-font($color) {
   font-family: $site-font;
@@ -109,13 +110,4 @@
   font-size: 0.625rem;
   line-height: 1.25rem;
   font-weight: 700;
-}
-
-// flexbox
-
-@mixin flex($direction, $align-items, $justify-content) {
-  display: flex;
-  flex-direction: $direction;
-  align-items: $align-items;
-  justify-content: $justify-content;
 }

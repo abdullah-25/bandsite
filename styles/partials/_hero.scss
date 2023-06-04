@@ -1,6 +1,11 @@
 @use "./mixins" as *;
 @use "./variables" as *;
 
+html,
+body {
+  @include resets;
+}
+
 .hero {
   background-image: linear-gradient(
       rgba(50, 50, 50, 0.5),
@@ -29,7 +34,6 @@
     align-items: center;
   }
 
-  //height: 60vh;
   &__container {
     padding-left: 1rem;
 
