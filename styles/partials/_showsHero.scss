@@ -1,23 +1,17 @@
 @use "./mixins" as *;
 @use "./variables" as *;
 
-html,
-body {
-  @include resets;
-}
-
 .hero {
   background-image: linear-gradient(
       rgba(50, 50, 50, 0.5),
       rgba(50, 50, 50, 0.5)
     ),
-    url("../../Assets/Images/hero-bio.jpg");
+    url("../../assets/images/shows-images/hero-shows.jpg");
 
   background-size: cover;
   width: 100%;
-  height: 30vh;
+  height: 50vh;
   display: flex;
-  align-items: center;
 
   @include tablet {
     background-size: cover;
@@ -36,6 +30,7 @@ body {
 
   &__container {
     padding-left: 1rem;
+    padding-bottom: 2rem;
 
     @include tablet {
       padding-left: 2.25rem;
@@ -45,7 +40,21 @@ body {
     }
   }
   &__heading {
-    @include mobile-title-font($primary-color-white);
+    @include mobile-page-header-font($primary-color-white);
+    font-weight: normal;
+    padding-bottom: 1rem;
+
+    @include tablet {
+      @include desktop-tablet-page-header-font($primary-color-white);
+    }
+  }
+  &__subheading {
+    @include mobile-page-header-font($primary-color-white);
+    font-weight: normal;
+    font-size: 2rem;
+    padding-bottom: 1.5rem;
+    width: 19rem;
+
     @include tablet {
       @include desktop-tablet-page-header-font($primary-color-white);
     }
