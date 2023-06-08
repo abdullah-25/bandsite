@@ -376,7 +376,7 @@ body {
   color: #323232;
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: 700;
+  font-weight: 600;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -448,7 +448,7 @@ body {
   color: #323232;
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: 700;
+  font-weight: 600;
   padding-bottom: 1rem;
   padding-top: 1.5rem;
 }
@@ -607,4 +607,93 @@ body {
   .about__secondsubheadingcontainer {
     padding-right: 0;
   }
+}
+
+.shows {
+  padding: 1rem;
+}
+.shows__text-container--text {
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+  font-family: "Avenir Next";
+  color: #000000;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+.shows__container--date--title {
+  font-family: "Avenir Next";
+  color: #afafaf;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+.shows__container--date--actualvalue {
+  padding-bottom: 1rem;
+  font-family: "Avenir Next";
+  color: #000000;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+.shows__container--venue--title {
+  font-family: "Avenir Next";
+  color: #afafaf;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+.shows__container--venue--actualvalue {
+  padding-bottom: 1rem;
+  font-family: "Avenir Next";
+  color: #000000;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  font-weight: 500;
+}
+.shows__container--location--title {
+  font-family: "Avenir Next";
+  color: #afafaf;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+.shows__container--location--actualvalue {
+  padding-bottom: 1rem;
+  font-family: "Avenir Next";
+  color: #000000;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  font-weight: 500;
+}
+.shows__container--btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.shows__container--btn-buy-tickets {
+  font-family: "Avenir Next";
+  color: white;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  font-weight: normal;
+  font-size: 1rem;
+  background: #323232;
+  width: 20rem;
+  height: 2.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+.shows__container--line-divider {
+  box-sizing: border-box;
+  margin-left: -16px;
+  margin-right: -16px;
+  margin-bottom: 0.5rem;
+}
+
+* {
+  box-sizing: border-box;
 }/*# sourceMappingURL=bio.css.map */

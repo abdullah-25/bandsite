@@ -115,9 +115,12 @@ function showDisplay(show) {
 
   //button div
   let button = document.createElement("button");
+  let buttonContainer = document.createElement("div");
+  buttonContainer.className = "shows__container--btn";
   button.classList.add("shows__container--btn-buy-tickets");
   button.innerHTML = "BUY TICKETS";
-  showsContainer.appendChild(button);
+  buttonContainer.appendChild(button);
+  showsContainer.appendChild(buttonContainer);
   button.addEventListener("click", () => alert("Do you want to buy tickets?"));
 
   //line divider

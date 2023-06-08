@@ -5,3 +5,8 @@
 @use "./partials/footer" as *;
 @use "./partials/gallery" as *;
 @use "./partials/about" as *;
+@use "./partials/shows" as *;
+
+* {
+  box-sizing: border-box;
+}

@@ -1,0 +1,67 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+
+.shows {
+  padding: 1rem;
+
+  &__text-container--text {
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    @include mobile-page-header-font($secondary-color-BandSite-darkblack);
+  }
+  &__container {
+    &--date {
+      &--title {
+        @include mobile-sub-header-font($primary-color-silver);
+      }
+
+      &--actualvalue {
+        padding-bottom: 1rem;
+        @include mobile-sub-header-font($secondary-color-BandSite-darkblack);
+      }
+    }
+
+    &--venue {
+      &--title {
+        @include mobile-sub-header-font($primary-color-silver);
+      }
+      &--actualvalue {
+        padding-bottom: 1rem;
+        @include mobile-sub-header-font($secondary-color-BandSite-darkblack);
+        font-weight: 500;
+      }
+    }
+
+    &--location {
+      &--title {
+        @include mobile-sub-header-font($primary-color-silver);
+      }
+      &--actualvalue {
+        padding-bottom: 1rem;
+        @include mobile-sub-header-font($secondary-color-BandSite-darkblack);
+        font-weight: 500;
+      }
+    }
+    &--btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &--btn-buy-tickets {
+      @include mobile-labels-btn-font(white);
+      font-weight: normal;
+      font-size: 1rem;
+      background: $primary-color-BandSite-black;
+      width: 20rem;
+      height: 2.5rem;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+    }
+    &--line-divider {
+      box-sizing: border-box;
+      margin-left: -16px;
+      margin-right: -16px;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
