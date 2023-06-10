@@ -784,6 +784,11 @@ body {
     padding-bottom: 2rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .conversation__title-container {
+    padding-left: 7rem;
+  }
+}
 .conversation__title-container--title {
   font-family: "Avenir Next";
   color: #000000;
@@ -813,6 +818,12 @@ body {
     padding-right: 5rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .conversation__comment-contaier__comment-outer-container {
+    padding-left: 24rem;
+    padding-right: 24rem;
+  }
+}
 .conversation__comment-contaier__comment-outer-container--avatar {
   margin-top: 1.5rem;
   border-radius: 50%;
@@ -820,6 +831,12 @@ body {
   height: 36px;
 }
 @media screen and (min-width: 768px) {
+  .conversation__comment-contaier__comment-outer-container--avatar {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+@media screen and (min-width: 1280px) {
   .conversation__comment-contaier__comment-outer-container--avatar {
     width: 3rem;
     height: 3rem;
@@ -886,6 +903,12 @@ body {
     margin-right: 5rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .conversation__comment-contaier--line-break {
+    margin-left: 24rem;
+    margin-right: 24rem;
+  }
+}
 
 input[type=text],
 select {
@@ -910,6 +933,12 @@ select {
     box-sizing: border-box;
     padding-left: 5rem;
     padding-right: 5rem;
+  }
+}
+@media screen and (min-width: 1280px) and (min-width: 1280px) {
+  .user-comments-container {
+    padding-left: 24rem;
+    padding-right: 24rem;
   }
 }
 .user-comments-container__image-container {

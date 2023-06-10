@@ -7,6 +7,12 @@
     padding-left: 5rem;
     padding-right: 5rem;
   }
+  @include desktop {
+    @include desktop {
+      padding-left: 24rem;
+      padding-right: 24rem;
+    }
+  }
   &__image-container {
     display: flex;
     width: 36px;
