@@ -13,7 +13,6 @@
   &__outerdiv {
     display: flex;
     flex-wrap: wrap;
-    padding-left: 0.5rem;
 
     &--name {
       @include mobile-sub-header-font($secondary-color-BandSite-darkblack);

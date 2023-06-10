@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/styles/shows.css" />
 
     <script src="/scripts/build-shows-page.js" defer></script>
+    <script src="/scripts/index-page.js" defer></script>
 
     <title>BandSite</title>
   </head>
@@ -16,15 +17,21 @@
     <!-- Header section -->
     <div class="topnav">
       <div class="topnav__logo">
-        <a href="./index.html"
+        <a href="/index.html"
           ><img
             class="header__title--logo"
-            src="/assets/logo/Logo-bandsite.svg"
+            src="/assets/Logo/Logo-bandsite.svg"
         /></a>
       </div>
       <div class="topnav__link">
-        <a href="#about" class="topnav__link topnav__link--active">Biography</a>
-        <a href="#shows" class="topnav__link topnav__link--nothover">Shows</a>
+        <a
+          href="/index.html"
+          class="topnav__link topnav__link--bio topnav__link--hover"
+          >Biography</a
+        >
+        <a href="/pages/shows.html" class="topnav__link topnav__link--shows"
+          >Shows</a
+        >
       </div>
     </div>
 

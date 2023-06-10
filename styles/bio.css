@@ -16,19 +16,10 @@
   font-weight: 600;
   font-weight: normal;
 }
-html,
-body {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
 .topnav {
   background: #323232;
   overflow: hidden;
-  height: 10vh;
-  /* Style the links inside the navigation bar */
+  height: 10.5vh;
 }
 @media screen and (min-width: 768px) {
   .topnav {
@@ -76,14 +67,22 @@ body {
   justify-content: space-around;
   padding-bottom: 0.7rem;
   width: 100%;
+  /* Add the following styles for the default underline on Biography */
+  /* Add the following styles to change the border-bottom on hover */
+}
+.topnav__link:hover:not(.topnav__link--active) {
+  border-bottom: 3px solid white;
 }
 .topnav__link--active {
   border-bottom: 0.1875rem solid white;
-  font-style: bold;
+  font-weight: bold;
   color: white;
 }
-.topnav__link--nothover {
-  color: #e1e1e1;
+.topnav__link--bio {
+  border-bottom: 3px solid white;
+}
+.topnav__link--hover:hover {
+  border-bottom: 3px solid white;
 }
 @media screen and (min-width: 768px) {
   .topnav__link {
@@ -784,10 +783,12 @@ body {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 600;
+  font-size: 1.5rem;
 }
 .conversation__comment-contaier__comment-outer-container {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
 }
 .conversation__comment-contaier__comment-outer-container--avatar {
   margin-top: 1.5rem;
@@ -797,18 +798,21 @@ body {
 }
 .conversation__comment-contaier__comment-outer-container--form {
   padding-left: 1rem;
+  flex: 1;
 }
 .conversation__comment-contaier__comment-outer-container--form__name {
-  padding-bottom: 4px;
   font-family: "Avenir Next";
   color: #afafaf;
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 600;
 }
+.conversation__comment-contaier__comment-outer-container--form__name-input {
+  flex: 1;
+}
 .conversation__comment-contaier__comment-outer-container--form__comment {
   padding-top: 1rem;
-  padding-bottom: 4px;
+  flex: 1;
   font-family: "Avenir Next";
   color: #afafaf;
   font-size: 0.875rem;
@@ -816,9 +820,11 @@ body {
   font-weight: 600;
 }
 .conversation__comment-contaier__comment-outer-container--form__comment-input {
+  flex: 1;
   padding-bottom: 1rem;
 }
 .conversation__comment-contaier__comment-outer-container--form__btn {
+  width: 100%;
   font-family: "Avenir Next";
   color: white;
   font-size: 0.625rem;
@@ -826,24 +832,31 @@ body {
   font-weight: 700;
   font-size: 1rem;
   background-color: #323232;
-  height: 2.8rem;
-  width: 14rem;
-  border-radius: 0.25rem;
-}
-
-input {
-  outline: none;
-  background-color: #fafafa;
-  height: 30px;
-  width: 100%;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
   border-radius: 4px;
+  cursor: pointer;
+}
+.conversation__comment-contaier--line-break {
+  margin-bottom: 1rem;
 }
 
-input:focus {
+input[type=text],
+select {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  margin: 0.25rem 0;
+  display: inline-block;
+  border: 0.0625 solid #ccc;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  background-color: #fafafa;
   outline: black;
 }
 
-#comment {
+input[name=comment],
+select {
   height: 7rem;
 }
 
@@ -857,7 +870,6 @@ input:focus {
 .user-comments-container__outerdiv {
   display: flex;
   flex-wrap: wrap;
-  padding-left: 0.5rem;
 }
 .user-comments-container__outerdiv--name {
   font-family: "Avenir Next";

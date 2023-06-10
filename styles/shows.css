@@ -16,19 +16,10 @@
   font-weight: 600;
   font-weight: normal;
 }
-html,
-body {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
 .topnav {
   background: #323232;
   overflow: hidden;
-  height: 10vh;
-  /* Style the links inside the navigation bar */
+  height: 10.5vh;
 }
 @media screen and (min-width: 768px) {
   .topnav {
@@ -76,14 +67,22 @@ body {
   justify-content: space-around;
   padding-bottom: 0.7rem;
   width: 100%;
+  /* Add the following styles for the default underline on Biography */
+  /* Add the following styles to change the border-bottom on hover */
+}
+.topnav__link:hover:not(.topnav__link--active) {
+  border-bottom: 3px solid white;
 }
 .topnav__link--active {
   border-bottom: 0.1875rem solid white;
-  font-style: bold;
+  font-weight: bold;
   color: white;
 }
-.topnav__link--nothover {
-  color: #e1e1e1;
+.topnav__link--bio {
+  border-bottom: 3px solid white;
+}
+.topnav__link--hover:hover {
+  border-bottom: 3px solid white;
 }
 @media screen and (min-width: 768px) {
   .topnav__link {

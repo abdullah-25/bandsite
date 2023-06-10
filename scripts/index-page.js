@@ -41,7 +41,7 @@ formSubmission.addEventListener("submit", (event) => {
 
   // Push the new comment to the comments array
   conversationArray.unshift(newComment);
-  console.log(conversationArray);
+  displayComments();
 
   // Clear the input fields
   event.target.name.value = "";
@@ -60,20 +60,20 @@ function addComment(name, date, comment) {
   newOuterDiv.className = "user-comments-container__outerdiv";
   newOuterDiv.appendChild(imageDiv);
 
-  let nameEmailDiv = document.createElement("div"); // New container div
-  nameEmailDiv.className = "user-comments-container__name-email-div";
+  let nameAndEmailDiv = document.createElement("div"); // New div for name and email
+  nameAndEmailDiv.className = "user-comments-container__name-email-div"; // Replace with desired class name
 
   let newName = document.createElement("div");
   newName.className = "user-comments-container__outerdiv--name";
   newName.innerHTML = name;
-  nameEmailDiv.appendChild(newName);
+  nameAndEmailDiv.appendChild(newName);
 
   let newEmail = document.createElement("div");
   newEmail.className = "user-comments-container__outerdiv--email";
   newEmail.innerHTML = date;
-  nameEmailDiv.appendChild(newEmail);
+  nameAndEmailDiv.appendChild(newEmail);
 
-  newOuterDiv.appendChild(nameEmailDiv);
+  newOuterDiv.appendChild(nameAndEmailDiv); // Append the new div containing name and email
 
   let newComment = document.createElement("div");
   newComment.className = "user-comments-container__outerdiv--comment";
@@ -83,54 +83,70 @@ function addComment(name, date, comment) {
   let newHr = document.createElement("hr");
 
   parentClassUserComments.appendChild(newOuterDiv);
-  parentClassUserComments.appendChild(newHr);
+  parentClassUserComments.appendChild(newHr); // Append the <hr> element at the bottom
 }
 
-// function updateCommentSection(name, date, comment) {
-//   let newObj = { Name: name, date, date, Comment: comment };
-//   conversationArray.append(newObj);
-//   return conversationArray;
-//   //console.log(conversationArray);
-//   //Clears all comments from the page
-//   //Re-renders to the page all comments from the comment array
-//   //Clears the input fields after submitting a new comment
-// }
+// Function to display the comments
 
-for (let i = 0; i < conversationArray.length; i++) {
-  let image = document.createElement("img");
-  image.className = "user-comments-container__image-container--avatar";
-  let imageDiv = document.createElement("div");
-  imageDiv.className = "user-comments-container__image-container";
-  imageDiv.appendChild(image);
+function displayComments() {
+  // Clear the existing comments
+  parentClassUserComments.innerHTML = "";
 
-  let outerDiv = document.createElement("div");
-  outerDiv.className = "user-comments-container__outerdiv";
-  outerDiv.appendChild(imageDiv);
+  for (let i = 0; i < conversationArray.length; i++) {
+    const comment = conversationArray[i];
 
-  let nameAndEmailDiv = document.createElement("div"); // New div for name and email
-  nameAndEmailDiv.className = "user-comments-container__name-email-div"; // Replace with desired class name
+    let newImage = document.createElement("img");
+    newImage.className = "user-comments-container__image-container--avatar";
 
-  let name = document.createElement("div");
-  name.className = "user-comments-container__outerdiv--name";
-  name.innerHTML = conversationArray[i].Name;
-  nameAndEmailDiv.appendChild(name);
+    let imageDiv = document.createElement("div");
+    imageDiv.className = "user-comments-container__image-container";
+    imageDiv.appendChild(newImage);
 
-  let email = document.createElement("div");
-  email.className = "user-comments-container__outerdiv--email";
-  email.innerHTML = conversationArray[i].date;
-  nameAndEmailDiv.appendChild(email);
+    let newOuterDiv = document.createElement("div");
+    newOuterDiv.className = "user-comments-container__outerdiv";
+    newOuterDiv.appendChild(imageDiv);
 
-  outerDiv.appendChild(nameAndEmailDiv); // Append the new div containing name and email
+    let nameAndEmailDiv = document.createElement("div");
+    nameAndEmailDiv.className = "user-comments-container__name-email-div";
 
-  let comment = document.createElement("div");
-  comment.className = "user-comments-container__outerdiv--comment";
-  comment.innerHTML = conversationArray[i].comment;
-  outerDiv.appendChild(comment);
+    let newName = document.createElement("div");
+    newName.className = "user-comments-container__outerdiv--name";
+    newName.innerHTML = comment.Name;
+    nameAndEmailDiv.appendChild(newName);
 
-  let hr = document.createElement("hr");
+    let newEmail = document.createElement("div");
+    newEmail.className = "user-comments-container__outerdiv--email";
+    newEmail.innerHTML = comment.date;
+    nameAndEmailDiv.appendChild(newEmail);
 
-  parentClassUserComments.appendChild(outerDiv);
-  parentClassUserComments.appendChild(hr);
+    newOuterDiv.appendChild(nameAndEmailDiv);
+
+    let newComment = document.createElement("div");
+    newComment.className = "user-comments-container__outerdiv--comment";
+    newComment.innerHTML = comment.comment;
+    newOuterDiv.appendChild(newComment);
+
+    let newHr = document.createElement("hr");
+
+    parentClassUserComments.appendChild(newOuterDiv);
+    parentClassUserComments.appendChild(newHr);
+  }
 }
+
+// Call the displayComments function to display the comments initially
+displayComments();
+
+const bioLink = document.querySelector(".topnav__link--bio");
+const showsLink = document.querySelector(".topnav__link--shows");
+
+bioLink.addEventListener("click", function () {
+  bioLink.classList.add("topnav__link--active");
+  showsLink.classList.remove("topnav__link--active");
+});
+
+showsLink.addEventListener("click", function () {
+  showsLink.classList.add("topnav__link--active");
+  bioLink.classList.remove("topnav__link--active");
+});
 
 console.log(conversationArray);
