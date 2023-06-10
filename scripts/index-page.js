@@ -19,10 +19,76 @@ let conversationArray = [
   },
 ];
 
+let parentClassUserComments = document.querySelector(
+  ".user-comments-container"
+);
+
+const formSubmission = document.querySelector(
+  ".conversation__comment-contaier__comment-outer-container--form"
+);
+
+formSubmission.addEventListener("submit", (event) => {
+  event.preventDefault();
+  let dateTime = new Date();
+  let date = dateTime.toLocaleDateString();
+  addComment(event.target.name.value, date, event.target.comment.value);
+  // Create a new comment object
+  const newComment = {
+    Name: event.target.name.value,
+    date: date,
+    comment: event.target.comment.value,
+  };
+
+  // Push the new comment to the comments array
+  conversationArray.unshift(newComment);
+  console.log(conversationArray);
+
+  // Clear the input fields
+  event.target.name.value = "";
+  event.target.comment.value = "";
+});
+
+function addComment(name, date, comment) {
+  let newImage = document.createElement("img");
+  newImage.src = "http://placeholder.";
+  newImage.className = "user-comments-container__avatar";
+  newImage.style = "width: 36px;height: 36px";
+  let newOuterDiv = document.createElement("div");
+  newOuterDiv.className = "user-comments-container__outerdiv";
+  let newName = document.createElement("div");
+  newName.className = "user-comments-container__outerdiv--name";
+  newName.innerHTML = name;
+  let newEmail = document.createElement("div");
+  newEmail.className = "user-comments-container__outerdiv--email";
+  newEmail.innerHTML = date;
+  let newComment = document.createElement("div");
+  newComment.className = "user-comments-container__outerdiv--comment";
+  newComment.innerHTML = comment;
+
+  let newHr = document.createElement("hr");
+
+  parentClassUserComments.appendChild(newImage);
+  parentClassUserComments.appendChild(newOuterDiv);
+  newOuterDiv.appendChild(newName);
+  newOuterDiv.appendChild(newEmail);
+  newOuterDiv.appendChild(newComment);
+  parentClassUserComments.appendChild(newOuterDiv);
+  parentClassUserComments.appendChild(newHr);
+
+  //push to object
+}
+
+// function updateCommentSection(name, date, comment) {
+//   let newObj = { Name: name, date, date, Comment: comment };
+//   conversationArray.append(newObj);
+//   return conversationArray;
+//   //console.log(conversationArray);
+//   //Clears all comments from the page
+//   //Re-renders to the page all comments from the comment array
+//   //Clears the input fields after submitting a new comment
+// }
+
 for (let i = 0; i < conversationArray.length; i++) {
-  let parentClassUserComments = document.querySelector(
-    ".user-comments-container"
-  );
   let image = document.createElement("img");
   image.src = "http://placeholder.";
   image.className = "user-comments-container__avatar";
@@ -49,3 +115,5 @@ for (let i = 0; i < conversationArray.length; i++) {
   parentClassUserComments.appendChild(outerDiv);
   parentClassUserComments.appendChild(hr);
 }
+
+console.log(conversationArray);
