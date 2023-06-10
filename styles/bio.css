@@ -777,6 +777,13 @@ body {
 .conversation__title-container {
   padding-bottom: 1rem;
 }
+@media screen and (min-width: 768px) {
+  .conversation__title-container {
+    padding-left: 1rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+  }
+}
 .conversation__title-container--title {
   font-family: "Avenir Next";
   color: #000000;
@@ -785,16 +792,38 @@ body {
   font-weight: 600;
   font-size: 1.5rem;
 }
+@media screen and (min-width: 768px) {
+  .conversation__title-container--title {
+    font-family: "Avenir Next";
+    color: #323232;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+  }
+}
 .conversation__comment-contaier__comment-outer-container {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+}
+@media screen and (min-width: 768px) {
+  .conversation__comment-contaier__comment-outer-container {
+    box-sizing: border-box;
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
 }
 .conversation__comment-contaier__comment-outer-container--avatar {
   margin-top: 1.5rem;
   border-radius: 50%;
   width: 36px;
   height: 36px;
+}
+@media screen and (min-width: 768px) {
+  .conversation__comment-contaier__comment-outer-container--avatar {
+    width: 3rem;
+    height: 3rem;
+  }
 }
 .conversation__comment-contaier__comment-outer-container--form {
   padding-left: 1rem;
@@ -838,8 +867,24 @@ body {
   border-radius: 4px;
   cursor: pointer;
 }
+@media screen and (min-width: 768px) {
+  .conversation__comment-contaier__comment-outer-container--form__btn {
+    display: flex;
+    width: auto;
+    justify-self: flex-end;
+    margin-left: auto;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
 .conversation__comment-contaier--line-break {
   margin-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .conversation__comment-contaier--line-break {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
 }
 
 input[type=text],
@@ -860,6 +905,13 @@ select {
   height: 7rem;
 }
 
+@media screen and (min-width: 768px) {
+  .user-comments-container {
+    box-sizing: border-box;
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
 .user-comments-container__image-container {
   display: flex;
   width: 36px;
