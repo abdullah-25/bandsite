@@ -31,27 +31,6 @@ let shows = [
   },
 ];
 
-/* 
-  <div class="shows__container">
-        <div class="shows__container--date">
-          <div class="shows__container--date--title">DATE</div>
-          <div class="shows__container--date--actualvalue">shows.date</div>
-        </div>
-        <div class="shows__container--venue">
-          <div class="shows__container--venue--title">VENUE</div>
-          <div class="shows__container--venue--actualvalue">shows.venue</div>
-        </div>
-        <div class="shows__container--location">
-          <div class="shows__container--date--title">LOCATION</div>
-          <div class="shows__container--date--actualvalue">shows.location</div>
-        </div>
-        <button type="button" class="shows__container--btn-buy-tickets">
-          BUY TICKETS
-        </button>
-        <hr />
-      </div>
-*/
-
 let showsContainer = document.querySelector(".shows__container");
 
 for (let show of shows) {
@@ -75,7 +54,7 @@ function showDisplay(show) {
 
   showsContainerDate.appendChild(showsContainerDateTitle);
   showsContainerDate.appendChild(showsContainerDateActualValue);
-  showsContainer.appendChild(showsContainerDate);
+  //showsContainer.appendChild(showsContainerDate);
 
   //venue div
   let venueContainer = document.createElement("div");
@@ -93,7 +72,7 @@ function showDisplay(show) {
 
   venueContainer.appendChild(venueContainerTitle);
   venueContainer.appendChild(venueContainerActualValue);
-  showsContainer.appendChild(venueContainer);
+  //showsContainer.appendChild(venueContainer);
 
   //location div
   let locationContainerDate = document.createElement("div");
@@ -111,7 +90,7 @@ function showDisplay(show) {
 
   locationContainerDate.appendChild(locationContainerDateTitle);
   locationContainerDate.appendChild(locationContainerDateActualValue);
-  showsContainer.appendChild(locationContainerDate);
+  //showsContainer.appendChild(locationContainerDate);
 
   //button div
   let button = document.createElement("button");
@@ -120,8 +99,20 @@ function showDisplay(show) {
   button.classList.add("shows__container--btn-buy-tickets");
   button.innerHTML = "BUY TICKETS";
   buttonContainer.appendChild(button);
-  showsContainer.appendChild(buttonContainer);
+  //showsContainer.appendChild(buttonContainer);
+
   button.addEventListener("click", () => alert("Do you want to buy tickets?"));
+
+  //showsOuterContainer to hold date,venue, location and btn together
+
+  let showsOuterContainer = document.createElement("div");
+  showsOuterContainer.className = "shows__container__showsOuterContainer";
+  showsOuterContainer.appendChild(showsContainerDate);
+  showsOuterContainer.appendChild(venueContainer);
+  showsOuterContainer.appendChild(locationContainerDate);
+  showsOuterContainer.appendChild(buttonContainer);
+
+  showsContainer.appendChild(showsOuterContainer);
 
   //line divider
 
@@ -130,15 +121,3 @@ function showDisplay(show) {
 
   showsContainer.appendChild(lineDivider);
 }
-
-let dateValue = document.querySelector(".shows__container--date--actualvalue");
-
-let venueContainer = document.querySelector(".shows__container--venue");
-let venueValue = document.querySelector(
-  ".shows__container--venue--actualvalue"
-);
-
-let locationContainer = document.querySelector(".shows__container--location");
-let locationValue = document.querySelector(
-  ".shows__container--date--actualvalue"
-);

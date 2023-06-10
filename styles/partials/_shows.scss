@@ -8,11 +8,47 @@
     padding-top: 1rem;
     padding-bottom: 1.5rem;
     @include mobile-page-header-font($secondary-color-BandSite-darkblack);
+
+    @include tablet {
+      padding-left: 1rem;
+      @include desktop-tablet-sub-header-font(
+        $secondary-color-BandSite-darkblack
+      );
+      font-size: 2rem;
+    }
+    @include desktop {
+      padding-left: 6rem;
+      @include desktop-tablet-sub-header-font(
+        $secondary-color-BandSite-darkblack
+      );
+      font-size: 2rem;
+    }
   }
   &__container {
+    @include desktop {
+      box-sizing: border-box;
+      padding-left: 20rem;
+      padding-right: 6rem;
+    }
+    &__showsOuterContainer {
+      @include tablet {
+        display: flex;
+        padding: 1rem 1.125rem;
+      }
+    }
+
     &--date {
+      @include tablet {
+        width: 9rem;
+        padding-left: 0;
+        padding-right: 2rem;
+      }
+
       &--title {
         @include mobile-sub-header-font($primary-color-silver);
+        @include tablet {
+          padding-bottom: 1.5rem;
+        }
       }
 
       &--actualvalue {
@@ -22,8 +58,15 @@
     }
 
     &--venue {
+      @include tablet {
+        width: 7rem;
+        padding-right: 5rem;
+      }
       &--title {
         @include mobile-sub-header-font($primary-color-silver);
+        @include tablet {
+          padding-bottom: 1.5rem;
+        }
       }
       &--actualvalue {
         padding-bottom: 1rem;
@@ -33,9 +76,17 @@
     }
 
     &--location {
+      @include tablet {
+        width: 9rem;
+        //padding-right: 2rem;
+      }
       &--title {
         @include mobile-sub-header-font($primary-color-silver);
+        @include tablet {
+          padding-bottom: 1.5rem;
+        }
       }
+
       &--actualvalue {
         padding-bottom: 1rem;
         @include mobile-sub-header-font($secondary-color-BandSite-darkblack);
@@ -46,6 +97,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      @include tablet {
+        display: flex;
+        margin-left: auto;
+      }
     }
     &--btn-buy-tickets {
       @include mobile-labels-btn-font(white);
@@ -56,12 +111,25 @@
       height: 2.5rem;
       border-radius: 4px;
       margin-bottom: 0.5rem;
+
+      @include tablet {
+        width: auto;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
     }
     &--line-divider {
       box-sizing: border-box;
       margin-left: -16px;
       margin-right: -16px;
       margin-bottom: 0.5rem;
+      @include tablet {
+        box-sizing: border-box;
+        margin-bottom: 0;
+        margin-top: 0;
+        margin-left: 0.1rem;
+        margin-right: 0.1rem;
+      }
     }
   }
 }
