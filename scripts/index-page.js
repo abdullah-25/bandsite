@@ -50,32 +50,40 @@ formSubmission.addEventListener("submit", (event) => {
 
 function addComment(name, date, comment) {
   let newImage = document.createElement("img");
-  newImage.src = "http://placeholder.";
-  newImage.className = "user-comments-container__avatar";
-  newImage.style = "width: 36px;height: 36px";
+  newImage.className = "user-comments-container__image-container--avatar";
+
+  let imageDiv = document.createElement("div");
+  imageDiv.className = "user-comments-container__image-container";
+  imageDiv.appendChild(newImage);
+
   let newOuterDiv = document.createElement("div");
   newOuterDiv.className = "user-comments-container__outerdiv";
+  newOuterDiv.appendChild(imageDiv);
+
+  let nameEmailDiv = document.createElement("div"); // New container div
+  nameEmailDiv.className = "user-comments-container__name-email-div";
+
   let newName = document.createElement("div");
   newName.className = "user-comments-container__outerdiv--name";
   newName.innerHTML = name;
+  nameEmailDiv.appendChild(newName);
+
   let newEmail = document.createElement("div");
   newEmail.className = "user-comments-container__outerdiv--email";
   newEmail.innerHTML = date;
+  nameEmailDiv.appendChild(newEmail);
+
+  newOuterDiv.appendChild(nameEmailDiv);
+
   let newComment = document.createElement("div");
   newComment.className = "user-comments-container__outerdiv--comment";
   newComment.innerHTML = comment;
+  newOuterDiv.appendChild(newComment);
 
   let newHr = document.createElement("hr");
 
-  parentClassUserComments.appendChild(newImage);
-  parentClassUserComments.appendChild(newOuterDiv);
-  newOuterDiv.appendChild(newName);
-  newOuterDiv.appendChild(newEmail);
-  newOuterDiv.appendChild(newComment);
   parentClassUserComments.appendChild(newOuterDiv);
   parentClassUserComments.appendChild(newHr);
-
-  //push to object
 }
 
 // function updateCommentSection(name, date, comment) {
@@ -90,28 +98,37 @@ function addComment(name, date, comment) {
 
 for (let i = 0; i < conversationArray.length; i++) {
   let image = document.createElement("img");
-  image.src = "http://placeholder.";
-  image.className = "user-comments-container__avatar";
-  image.style = "width: 36px;height: 36px";
+  image.className = "user-comments-container__image-container--avatar";
+  let imageDiv = document.createElement("div");
+  imageDiv.className = "user-comments-container__image-container";
+  imageDiv.appendChild(image);
+
   let outerDiv = document.createElement("div");
   outerDiv.className = "user-comments-container__outerdiv";
+  outerDiv.appendChild(imageDiv);
+
+  let nameAndEmailDiv = document.createElement("div"); // New div for name and email
+  nameAndEmailDiv.className = "user-comments-container__name-email-div"; // Replace with desired class name
+
   let name = document.createElement("div");
   name.className = "user-comments-container__outerdiv--name";
   name.innerHTML = conversationArray[i].Name;
+  nameAndEmailDiv.appendChild(name);
+
   let email = document.createElement("div");
   email.className = "user-comments-container__outerdiv--email";
   email.innerHTML = conversationArray[i].date;
+  nameAndEmailDiv.appendChild(email);
+
+  outerDiv.appendChild(nameAndEmailDiv); // Append the new div containing name and email
+
   let comment = document.createElement("div");
   comment.className = "user-comments-container__outerdiv--comment";
   comment.innerHTML = conversationArray[i].comment;
+  outerDiv.appendChild(comment);
 
   let hr = document.createElement("hr");
 
-  parentClassUserComments.appendChild(image);
-  parentClassUserComments.appendChild(outerDiv);
-  outerDiv.appendChild(name);
-  outerDiv.appendChild(email);
-  outerDiv.appendChild(comment);
   parentClassUserComments.appendChild(outerDiv);
   parentClassUserComments.appendChild(hr);
 }

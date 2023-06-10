@@ -1,0 +1,70 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.conversation {
+  padding: 1rem;
+
+  &__title-container {
+    padding-bottom: 1rem;
+    &--title {
+      @include mobile-page-header-font($secondary-color-BandSite-darkblack);
+    }
+  }
+
+  &__comment-contaier {
+    &__comment-outer-container {
+      width: 100%;
+      display: flex;
+
+      &--avatar {
+        margin-top: 1.5rem;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+      }
+      &--form {
+        padding-left: 1rem;
+
+        &__name {
+          padding-bottom: 4px;
+          @include mobile-sub-header-font($primary-color-silver);
+        }
+        &__name-input {
+          //padding: 0.75rem;
+        }
+        &__comment {
+          padding-top: 1rem;
+          padding-bottom: 4px;
+          @include mobile-sub-header-font($primary-color-silver);
+        }
+        &__comment-input {
+          padding-bottom: 1rem;
+        }
+        &__btn {
+          @include mobile-labels-btn-font(white);
+          font-size: 1rem;
+
+          background-color: $primary-color-BandSite-black;
+          height: 2.8rem;
+          width: 14rem;
+
+          border-radius: 0.25rem;
+        }
+      }
+    }
+  }
+}
+
+input {
+  outline: none;
+  background-color: $secondary-color-alabaster;
+  height: 30px;
+  width: 100%;
+  border-radius: 4px;
+}
+input:focus {
+  outline: black;
+}
+#comment {
+  height: 7rem;
+}

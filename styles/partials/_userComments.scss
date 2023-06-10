@@ -1,0 +1,42 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.user-comments-container {
+  &__image-container {
+    display: flex;
+    width: 36px;
+    height: 36px;
+    background-color: #e1e1e1;
+    border-radius: 50%;
+  }
+
+  &__outerdiv {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0.5rem;
+
+    &--name {
+      @include mobile-sub-header-font($secondary-color-BandSite-darkblack);
+    }
+
+    &--email {
+      @include mobile-sub-header-font($primary-color-silver);
+    }
+
+    &--comment {
+      @include mobile-body-font($secondary-color-BandSite-darkblack);
+      padding-left: 3.4rem;
+    }
+  }
+
+  &__name-email-div {
+    display: flex;
+    padding-left: 1rem;
+    justify-content: space-between;
+    flex: 1;
+  }
+
+  &__name-email-div--email {
+    margin-left: auto;
+  }
+}
