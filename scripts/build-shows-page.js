@@ -120,4 +120,8 @@ function showDisplay(show) {
   lineDivider.classList.add("shows__container--line-divider");
 
   showsContainer.appendChild(lineDivider);
+
+  showsOuterContainer.addEventListener("click", () => {
+    showsOuterContainer.classList.toggle("selected");
+  });
 }

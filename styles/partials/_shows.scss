@@ -2,6 +2,7 @@
 @use "./variables" as *;
 
 .shows {
+  background-color: white;
   padding: 1rem;
 
   &__text-container--text {
@@ -31,9 +32,15 @@
       padding-right: 6rem;
     }
     &__showsOuterContainer {
+      &:hover {
+        background-color: #fafafa;
+      }
       @include tablet {
         display: flex;
         padding: 1rem 1.125rem;
+      }
+      &.selected {
+        background-color: #e1e1e1;
       }
     }
 
