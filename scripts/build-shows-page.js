@@ -99,11 +99,6 @@ function showDisplay(show) {
   button.classList.add("shows__container--btn-buy-tickets");
   button.innerHTML = "BUY TICKETS";
   buttonContainer.appendChild(button);
-  //showsContainer.appendChild(buttonContainer);
-
-  button.addEventListener("click", () => alert("Do you want to buy tickets?"));
-
-  //showsOuterContainer to hold date,venue, location and btn together
 
   let showsOuterContainer = document.createElement("div");
   showsOuterContainer.className = "shows__container__showsOuterContainer";

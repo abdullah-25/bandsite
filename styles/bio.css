@@ -19,7 +19,7 @@
 .topnav {
   background: #323232;
   overflow: hidden;
-  height: 10.5vh;
+  height: auto;
 }
 @media screen and (min-width: 768px) {
   .topnav {
@@ -41,7 +41,6 @@
     height: 8vh;
     padding-top: 1.5rem;
     padding-left: 5rem;
-    padding-bottom: 1rem;
   }
   .topnav__logo {
     padding-right: 2.8rem;
@@ -65,7 +64,6 @@
   text-decoration: none;
   display: flex;
   justify-content: space-around;
-  padding-bottom: 0.7rem;
   width: 100%;
   /* Add the following styles for the default underline on Biography */
   /* Add the following styles to change the border-bottom on hover */
@@ -130,7 +128,7 @@ body {
 }
 
 .hero {
-  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../../Assets/Images/hero-bio.jpg");
+  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("/assets/images/hero-bio.jpg");
   background-size: cover;
   width: 100%;
   height: 30vh;
@@ -608,279 +606,6 @@ body {
   }
 }
 
-.shows {
-  background-color: white;
-  padding: 1rem;
-}
-.shows__text-container--text {
-  padding-top: 1rem;
-  padding-bottom: 1.5rem;
-  font-family: "Avenir Next";
-  color: #000000;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 600;
-}
-@media screen and (min-width: 768px) {
-  .shows__text-container--text {
-    padding-left: 1rem;
-    font-family: "Avenir Next";
-    color: #000000;
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 600;
-    font-size: 2rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .shows__text-container--text {
-    padding-left: 6rem;
-    font-family: "Avenir Next";
-    color: #000000;
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 600;
-    font-size: 2rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .shows__container {
-    box-sizing: border-box;
-    padding-left: 20rem;
-    padding-right: 6rem;
-  }
-}
-.shows__container__showsOuterContainer:hover {
-  background-color: #fafafa;
-}
-@media screen and (min-width: 768px) {
-  .shows__container__showsOuterContainer {
-    display: flex;
-    padding: 1rem 1.125rem;
-  }
-}
-.shows__container__showsOuterContainer.selected {
-  background-color: #e1e1e1;
-}
-@media screen and (min-width: 768px) {
-  .shows__container--date {
-    width: 9rem;
-    padding-left: 0;
-    padding-right: 2rem;
-  }
-}
-.shows__container--date--title {
-  font-family: "Avenir Next";
-  color: #afafaf;
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  font-weight: 600;
-}
-@media screen and (min-width: 768px) {
-  .shows__container--date--title {
-    padding-bottom: 1.5rem;
-  }
-}
-.shows__container--date--actualvalue {
-  padding-bottom: 1rem;
-  font-family: "Avenir Next";
-  color: #000000;
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  font-weight: 600;
-}
-@media screen and (min-width: 768px) {
-  .shows__container--venue {
-    width: 7rem;
-    padding-right: 5rem;
-  }
-}
-.shows__container--venue--title {
-  font-family: "Avenir Next";
-  color: #afafaf;
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  font-weight: 600;
-}
-@media screen and (min-width: 768px) {
-  .shows__container--venue--title {
-    padding-bottom: 1.5rem;
-  }
-}
-.shows__container--venue--actualvalue {
-  padding-bottom: 1rem;
-  font-family: "Avenir Next";
-  color: #000000;
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  font-weight: 600;
-  font-weight: 500;
-}
-@media screen and (min-width: 768px) {
-  .shows__container--location {
-    width: 9rem;
-  }
-}
-.shows__container--location--title {
-  font-family: "Avenir Next";
-  color: #afafaf;
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  font-weight: 600;
-}
-@media screen and (min-width: 768px) {
-  .shows__container--location--title {
-    padding-bottom: 1.5rem;
-  }
-}
-.shows__container--location--actualvalue {
-  padding-bottom: 1rem;
-  font-family: "Avenir Next";
-  color: #000000;
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  font-weight: 600;
-  font-weight: 500;
-}
-.shows__container--btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@media screen and (min-width: 768px) {
-  .shows__container--btn {
-    display: flex;
-    margin-left: auto;
-  }
-}
-.shows__container--btn-buy-tickets {
-  font-family: "Avenir Next";
-  color: white;
-  font-size: 0.625rem;
-  line-height: 1.25rem;
-  font-weight: 700;
-  font-weight: normal;
-  font-size: 1rem;
-  background: #323232;
-  width: 20rem;
-  height: 2.5rem;
-  border-radius: 4px;
-  margin-bottom: 0.5rem;
-}
-@media screen and (min-width: 768px) {
-  .shows__container--btn-buy-tickets {
-    width: auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-.shows__container--line-divider {
-  box-sizing: border-box;
-  margin-left: -16px;
-  margin-right: -16px;
-  margin-bottom: 0.5rem;
-}
-@media screen and (min-width: 768px) {
-  .shows__container--line-divider {
-    box-sizing: border-box;
-    margin-bottom: 0;
-    margin-top: 0;
-    margin-left: 0.1rem;
-    margin-right: 0.1rem;
-  }
-}
-
-.hero {
-  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../../assets/images/shows-images/hero-shows.jpg");
-  background-size: cover;
-  width: 100%;
-  height: 50vh;
-  display: flex;
-}
-@media screen and (min-width: 768px) {
-  .hero {
-    background-size: cover;
-    width: 100%;
-    height: 45vh;
-    display: flex;
-    align-items: center;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .hero {
-    background-size: cover;
-    width: 100%;
-    height: 55vh;
-    display: flex;
-    align-items: center;
-  }
-}
-.hero__container {
-  padding-left: 1rem;
-  padding-bottom: 2rem;
-}
-@media screen and (min-width: 768px) {
-  .hero__container {
-    padding-left: 2.25rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .hero__container {
-    padding-left: 6rem;
-  }
-}
-.hero__heading {
-  font-family: "Avenir Next";
-  color: #ffffff;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 600;
-  font-weight: normal;
-  padding-bottom: 1rem;
-}
-@media screen and (min-width: 768px) {
-  .hero__heading {
-    font-family: "Avenir Next";
-    color: #ffffff;
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 600;
-  }
-}
-.hero__subheading {
-  font-family: "Avenir Next";
-  color: #ffffff;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 600;
-  font-weight: normal;
-  font-size: 2rem;
-  padding-bottom: 1.5rem;
-  width: 19rem;
-}
-@media screen and (min-width: 768px) {
-  .hero__subheading {
-    font-family: "Avenir Next";
-    color: #ffffff;
-    font-size: 3.75rem;
-    line-height: 4.25rem;
-    font-weight: 700 bold;
-    width: 30rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .hero__subheading {
-    box-sizing: border-box;
-    padding-right: 3rem;
-    width: 60rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .hero__subheading-container {
-    display: flex;
-  }
-}
-
 .conversation {
   padding: 1rem;
 }
@@ -916,6 +641,16 @@ body {
     font-weight: 700;
   }
 }
+@media screen and (min-width: 1280px) {
+  .conversation__title-container--title {
+    font-family: "Avenir Next";
+    color: #323232;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    font-size: 3.5rem;
+  }
+}
 .conversation__comment-contaier__comment-outer-container {
   width: 100%;
   display: flex;
@@ -930,8 +665,8 @@ body {
 }
 @media screen and (min-width: 1280px) {
   .conversation__comment-contaier__comment-outer-container {
-    padding-left: 24rem;
-    padding-right: 24rem;
+    padding-left: 30rem;
+    padding-right: 30rem;
   }
 }
 .conversation__comment-contaier__comment-outer-container--avatar {
@@ -1015,8 +750,8 @@ body {
 }
 @media screen and (min-width: 1280px) {
   .conversation__comment-contaier--line-break {
-    margin-left: 24rem;
-    margin-right: 24rem;
+    margin-left: 30rem;
+    margin-right: 30rem;
   }
 }
 
@@ -1038,6 +773,10 @@ select {
   height: 7rem;
 }
 
+.conversation__comment-contaier__comment-outer-container--form--error {
+  border: 2px solid #d22d2d;
+}
+
 @media screen and (min-width: 768px) {
   .user-comments-container {
     box-sizing: border-box;
@@ -1047,8 +786,8 @@ select {
 }
 @media screen and (min-width: 1280px) and (min-width: 1280px) {
   .user-comments-container {
-    padding-left: 24rem;
-    padding-right: 24rem;
+    padding-left: 30rem;
+    padding-right: 30rem;
   }
 }
 .user-comments-container__image-container {
@@ -1083,6 +822,11 @@ select {
   line-height: 1.125rem;
   font-weight: 400;
   padding-left: 3.4rem;
+}
+@media screen and (min-width: 1280px) {
+  .user-comments-container__outerdiv--comment {
+    padding-bottom: 1rem;
+  }
 }
 .user-comments-container__name-email-div {
   display: flex;

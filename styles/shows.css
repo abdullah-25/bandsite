@@ -19,7 +19,7 @@
 .topnav {
   background: #323232;
   overflow: hidden;
-  height: 10.5vh;
+  height: auto;
 }
 @media screen and (min-width: 768px) {
   .topnav {
@@ -41,7 +41,6 @@
     height: 8vh;
     padding-top: 1.5rem;
     padding-left: 5rem;
-    padding-bottom: 1rem;
   }
   .topnav__logo {
     padding-right: 2.8rem;
@@ -65,7 +64,6 @@
   text-decoration: none;
   display: flex;
   justify-content: space-around;
-  padding-bottom: 0.7rem;
   width: 100%;
   /* Add the following styles for the default underline on Biography */
   /* Add the following styles to change the border-bottom on hover */
@@ -130,7 +128,7 @@ body {
 }
 
 .hero {
-  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../../Assets/Images/hero-bio.jpg");
+  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("/assets/images/hero-bio.jpg");
   background-size: cover;
   width: 100%;
   height: 30vh;
@@ -791,7 +789,7 @@ body {
 }
 
 .hero {
-  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../../assets/images/shows-images/hero-shows.jpg");
+  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../../assets/images/hero-shows.jpg");
   background-size: cover;
   width: 100%;
   height: 50vh;
@@ -810,7 +808,7 @@ body {
   .hero {
     background-size: cover;
     width: 100%;
-    height: 55vh;
+    height: 95vh;
     display: flex;
     align-items: center;
   }

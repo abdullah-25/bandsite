@@ -4,7 +4,7 @@
 .topnav {
   background: $primary-color-BandSite-black;
   overflow: hidden;
-  height: 10.5vh;
+  height: auto;
 
   @include tablet {
     display: flex;
@@ -21,7 +21,7 @@
     height: 8vh;
     padding-top: 1.5rem;
     padding-left: 5rem;
-    padding-bottom: 1rem;
+    //padding-bottom: 1rem;
 
     &__logo {
       padding-right: 2.8rem;
@@ -43,7 +43,7 @@
     text-decoration: none;
     display: flex;
     justify-content: space-around;
-    padding-bottom: 0.7rem;
+    //padding-bottom: 0.7rem;
     width: 100%;
 
     &:hover:not(&--active) {

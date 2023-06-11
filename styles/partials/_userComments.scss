@@ -9,8 +9,8 @@
   }
   @include desktop {
     @include desktop {
-      padding-left: 24rem;
-      padding-right: 24rem;
+      padding-left: 30rem;
+      padding-right: 30rem;
     }
   }
   &__image-container {
@@ -36,6 +36,10 @@
     &--comment {
       @include mobile-body-font($secondary-color-BandSite-darkblack);
       padding-left: 3.4rem;
+
+      @include desktop {
+        padding-bottom: 1rem;
+      }
     }
   }
 

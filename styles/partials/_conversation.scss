@@ -23,6 +23,10 @@
           $primary-color-BandSite-black
         );
       }
+      @include desktop {
+        @include desktop-tablet-sub-header-font($primary-color-BandSite-black);
+        font-size: 3.5rem;
+      }
     }
   }
 
@@ -39,8 +43,8 @@
       }
 
       @include desktop {
-        padding-left: 24rem;
-        padding-right: 24rem;
+        padding-left: 30rem;
+        padding-right: 30rem;
       }
 
       &--avatar {
@@ -110,8 +114,8 @@
         margin-right: 5rem;
       }
       @include desktop {
-        margin-left: 24rem;
-        margin-right: 24rem;
+        margin-left: 30rem;
+        margin-right: 30rem;
       }
     }
   }
@@ -133,4 +137,8 @@ select {
 input[name="comment"],
 select {
   height: 7rem;
+}
+
+.conversation__comment-contaier__comment-outer-container--form--error {
+  border: 2px solid #d22d2d;
 }

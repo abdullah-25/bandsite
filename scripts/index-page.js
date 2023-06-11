@@ -27,10 +27,34 @@ const formSubmission = document.querySelector(
   ".conversation__comment-contaier__comment-outer-container--form"
 );
 
+const formErrorName = document.getElementById("name");
+const formErroComment = document.getElementById("comment");
+
 formSubmission.addEventListener("submit", (event) => {
   event.preventDefault();
   let dateTime = new Date();
   let date = dateTime.toLocaleDateString();
+
+  if (
+    event.target.name.value.trim() === "" ||
+    event.target.comment.value.trim() === ""
+  ) {
+    formErrorName.classList.add(
+      "conversation__comment-contaier__comment-outer-container--form--error"
+    );
+    formErroComment.classList.add(
+      "conversation__comment-contaier__comment-outer-container--form--error"
+    );
+    return;
+  } else {
+    formErrorName.classList.remove(
+      "conversation__comment-contaier__comment-outer-container--form--error"
+    );
+    formErroComment.classList.remove(
+      "conversation__comment-contaier__comment-outer-container--form--error"
+    );
+  }
+
   addComment(event.target.name.value, date, event.target.comment.value);
   // Create a new comment object
   const newComment = {
