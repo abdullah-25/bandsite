@@ -6,7 +6,6 @@ let shows = [];
 function displayShows() {
   axios.get(`${url}showdates?api_key=${api_key}`).then((response) => {
     shows = response.data;
-    console.log(shows);
     for (let i = 0; i < shows.length; i++) {
       //date div
       let showsContainerDate = document.createElement("div");

@@ -1,23 +1,25 @@
-let conversationArray = [
-  {
-    Name: "Connor Walton",
-    date: "02/17/2021",
-    comment:
-      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
-  {
-    Name: "Emilie Beach",
-    date: "01/09/2021",
-    comment:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    Name: "Miles Acosta",
-    date: "12/20/2020",
-    comment:
-      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-];
+// let conversationArray = [
+//   {
+//     Name: "Connor Walton",
+//     date: "02/17/2021",
+//     comment:
+//       "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+//   },
+//   {
+//     Name: "Emilie Beach",
+//     date: "01/09/2021",
+//     comment:
+//       "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
+//   },
+//   {
+//     Name: "Miles Acosta",
+//     date: "12/20/2020",
+//     comment:
+//       "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+//   },
+// ];
+const url_index = "https://project-1-api.herokuapp.com/";
+const api_key_index = "a64cef94-0295-4c01-8470-4e776116845e";
 
 let parentClassUserComments = document.querySelector(
   ".user-comments-container"
@@ -29,6 +31,17 @@ const formSubmission = document.querySelector(
 
 const formErrorName = document.getElementById("name");
 const formErroComment = document.getElementById("comment");
+
+let conversationArray = "";
+
+axios.get(`${url_index}comments?api_key=${api_key_index}`).then((response) => {
+  conversationArray = response.data;
+  conversationArray.sort(
+    (a, b) => new Date(b.timestamp) - new Date(a.timestamp)
+  );
+  console.log(conversationArray);
+  displayComments();
+});
 
 formSubmission.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -45,6 +58,9 @@ formSubmission.addEventListener("submit", (event) => {
     formErroComment.classList.add(
       "conversation__comment-contaier__comment-outer-container--form--error"
     );
+    // if (!event.target.name.value || !event.target.comment.value) {
+    //   return res.status(400).json({ error: 'Both name and comment are required' });
+    // }
     return;
   } else {
     formErrorName.classList.remove(
@@ -56,16 +72,21 @@ formSubmission.addEventListener("submit", (event) => {
   }
 
   addComment(event.target.name.value, date, event.target.comment.value);
-  // Create a new comment object
-  const newComment = {
-    Name: event.target.name.value,
-    date: date,
-    comment: event.target.comment.value,
-  };
 
-  // Push the new comment to the comments array
-  conversationArray.unshift(newComment);
-  displayComments();
+  axios
+    .post(`${url_index}comments?api_key=${api_key_index}`, {
+      name: event.target.name.value,
+      comment: event.target.comment.value,
+    })
+    .then(function (response) {
+      conversationArray.unshift(response.data);
+      displayComments();
+    });
+  if (!event.target.name.value || !event.target.comment.value) {
+    return res
+      .status(400)
+      .json({ error: "Both name and comment are required" });
+  }
 
   // Clear the input fields
   event.target.name.value = "";
@@ -135,12 +156,13 @@ function displayComments() {
 
     let newName = document.createElement("div");
     newName.className = "user-comments-container__outerdiv--name";
-    newName.innerHTML = comment.Name;
+    newName.innerHTML = comment.name;
     nameAndEmailDiv.appendChild(newName);
 
     let newEmail = document.createElement("div");
     newEmail.className = "user-comments-container__outerdiv--email";
-    newEmail.innerHTML = comment.date;
+    let d = new Date(comment.timestamp);
+    newEmail.innerHTML = d.toLocaleDateString();
     nameAndEmailDiv.appendChild(newEmail);
 
     newOuterDiv.appendChild(nameAndEmailDiv);
