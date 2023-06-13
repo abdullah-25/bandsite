@@ -125,6 +125,31 @@ function addComment(name, date, comment) {
   newComment.innerHTML = comment;
   newOuterDiv.appendChild(newComment);
 
+  let likebtnContainer = document.createElement("div");
+  likebtnContainer.className =
+    "user-comments-container__outerdiv--likebtnContainer";
+  let likebtn = document.createElement("button");
+  likebtn.className = "user-comments-container__outerdiv--likebtn";
+
+  likebtnContainer.appendChild(likebtn);
+
+  // likebtn.forEach(function (clapBtn) {
+  //   clapBtn.addEventListener("click", function () {
+  //     this.classList.toggle("clap-active");
+  //   });
+  // });
+  likebtn.innerHTML = `Like ${comment.likes}`;
+  newOuterDiv.appendChild(likebtnContainer);
+
+  if (likebtn) {
+    likebtn.addEventListener("click", function () {
+      likebtn.innerHTML = `Like ${comment.likes + 1}`;
+      comment.likes += 1;
+    });
+  } else {
+    console.log("Element with the specified selector was not found.");
+  }
+
   let newHr = document.createElement("hr");
 
   parentClassUserComments.appendChild(newOuterDiv);
@@ -172,10 +197,45 @@ function displayComments() {
     newComment.innerHTML = comment.comment;
     newOuterDiv.appendChild(newComment);
 
+    let likebtnContainer = document.createElement("div");
+    likebtnContainer.className =
+      "user-comments-container__outerdiv--likebtnContainer";
+    let likebtn = document.createElement("button");
+    likebtn.className = "user-comments-container__outerdiv--likebtn";
+
+    likebtnContainer.appendChild(likebtn);
+
+    // likebtn.forEach(function (clapBtn) {
+    //   clapBtn.addEventListener("click", function () {
+    //     this.classList.toggle("clap-active");
+    //   });
+    // });
+    likebtn.innerHTML = `Like ${comment.likes}`;
+    newOuterDiv.appendChild(likebtnContainer);
+
     let newHr = document.createElement("hr");
 
     parentClassUserComments.appendChild(newOuterDiv);
     parentClassUserComments.appendChild(newHr);
+
+    if (likebtn) {
+      likebtn.addEventListener("click", function () {
+        likebtn.innerHTML = `Like ${comment.likes + 1}`;
+        comment.likes += 1;
+        axios
+          .put(
+            `${url_index}comments/${comment.id}/like?api_key=${api_key_index}`
+          )
+          .then(function (response) {
+            console.log(response.data);
+          })
+          .catch(function (error) {
+            console.error(error);
+          });
+      });
+    } else {
+      console.log("Element with the specified selector was not found.");
+    }
   }
 }
 
