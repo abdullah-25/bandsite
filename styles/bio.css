@@ -833,6 +833,15 @@ select {
   padding-left: 3.4rem;
   padding-bottom: 1rem;
 }
+.user-comments-container__outerdiv--deletebtnContainer {
+  padding-left: 3.4rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.user-comments-container__outerdiv--deletebtn {
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
 .user-comments-container__name-email-div {
   display: flex;
   padding-left: 1rem;

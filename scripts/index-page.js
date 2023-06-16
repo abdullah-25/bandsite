@@ -1,23 +1,3 @@
-// let conversationArray = [
-//   {
-//     Name: "Connor Walton",
-//     date: "02/17/2021",
-//     comment:
-//       "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-//   },
-//   {
-//     Name: "Emilie Beach",
-//     date: "01/09/2021",
-//     comment:
-//       "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-//   },
-//   {
-//     Name: "Miles Acosta",
-//     date: "12/20/2020",
-//     comment:
-//       "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-//   },
-// ];
 const url_index = "https://project-1-api.herokuapp.com/";
 const api_key_index = "a64cef94-0295-4c01-8470-4e776116845e";
 
@@ -133,13 +113,19 @@ function addComment(name, date, comment) {
 
   likebtnContainer.appendChild(likebtn);
 
-  // likebtn.forEach(function (clapBtn) {
-  //   clapBtn.addEventListener("click", function () {
-  //     this.classList.toggle("clap-active");
-  //   });
-  // });
   likebtn.innerHTML = `Like ${comment.likes}`;
   newOuterDiv.appendChild(likebtnContainer);
+
+  let deletebtnContainer = document.createElement("div");
+  likebtnContainer.className =
+    "user-comments-container__outerdiv--deletebtnContainer";
+  let deletebtn = document.createElement("button");
+  deletebtn.className = "user-comments-container__outerdiv--deletebtn";
+
+  deletebtnContainer.appendChild(deletebtn);
+
+  deletebtn.innerHTML = `Delete`;
+  newOuterDiv.appendChild(deletebtnContainer);
 
   if (likebtn) {
     likebtn.addEventListener("click", function () {
@@ -150,7 +136,17 @@ function addComment(name, date, comment) {
     console.log("Element with the specified selector was not found.");
   }
 
+  if (deletebtn) {
+    likebtn.addEventListener("click", function () {
+      likebtn.innerHTML = `Like ${comment.likes + 1}`;
+      comment.likes += 1;
+    });
+  } else {
+    console.log("Element with the specified selector was not found.");
+  }
+
   let newHr = document.createElement("hr");
+  newOuterDiv.appendChild(newHr);
 
   parentClassUserComments.appendChild(newOuterDiv);
   parentClassUserComments.appendChild(newHr); // Append the <hr> element at the bottom
@@ -159,6 +155,7 @@ function addComment(name, date, comment) {
 // Function to display the comments
 
 function displayComments() {
+  console.log("display comments");
   // Clear the existing comments
   parentClassUserComments.innerHTML = "";
 
@@ -205,15 +202,22 @@ function displayComments() {
 
     likebtnContainer.appendChild(likebtn);
 
-    // likebtn.forEach(function (clapBtn) {
-    //   clapBtn.addEventListener("click", function () {
-    //     this.classList.toggle("clap-active");
-    //   });
-    // });
     likebtn.innerHTML = `Like ${comment.likes}`;
     newOuterDiv.appendChild(likebtnContainer);
 
+    let deletebtnContainer = document.createElement("div");
+    likebtnContainer.className =
+      "user-comments-container__outerdiv--deletebtnContainer";
+    let deletebtn = document.createElement("button");
+    deletebtn.className = "user-comments-container__outerdiv--deletebtn";
+
+    deletebtnContainer.appendChild(deletebtn);
+
+    deletebtn.innerHTML = `Delete`;
+    newOuterDiv.appendChild(deletebtnContainer);
+
     let newHr = document.createElement("hr");
+    newOuterDiv.appendChild(newHr);
 
     parentClassUserComments.appendChild(newOuterDiv);
     parentClassUserComments.appendChild(newHr);
@@ -235,6 +239,30 @@ function displayComments() {
       });
     } else {
       console.log("Element with the specified selector was not found.");
+    }
+
+    if (deletebtn) {
+      deletebtn.addEventListener("click", function () {
+        newOuterDiv.remove();
+        const hr = document.querySelector(
+          ".conversation__comment-contaier--line-break"
+        );
+        // hr.remove();
+        axios
+          .delete(
+            `${url_index}comments/${comment.id}/?api_key=${api_key_index}`
+          )
+          .then(function (response) {
+            console.log(comment.id);
+            conversationArray = conversationArray.filter(
+              (com) => com.id !== comment.id
+            );
+            displayComments();
+          })
+          .catch(function (error) {
+            console.error(error);
+          });
+      });
     }
   }
 }
