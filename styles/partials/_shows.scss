@@ -32,15 +32,15 @@
       padding-right: 6rem;
     }
     &__showsOuterContainer {
+      &--selected {
+        background-color: #e1e1e1;
+      }
       &:hover {
         background-color: #fafafa;
       }
       @include tablet {
         display: flex;
         padding: 1rem 1.125rem;
-      }
-      &.selected {
-        background-color: #e1e1e1;
       }
     }
 
@@ -51,16 +51,38 @@
         padding-right: 2rem;
       }
 
-      &--title {
+      &--firsttitle {
         @include mobile-sub-header-font($primary-color-silver);
         @include tablet {
           padding-bottom: 1.5rem;
         }
       }
 
+      &--title {
+        @include mobile-sub-header-font($primary-color-silver);
+        @include tablet {
+          padding-bottom: 1.5rem;
+          display: none;
+        }
+        @include desktop {
+          display: none;
+        }
+      }
+
+      &--firstactualvalue {
+        padding-bottom: 1rem;
+        @include mobile-sub-header-font($secondary-color-BandSite-darkblack);
+        font-weight: 500;
+      }
+
       &--actualvalue {
         padding-bottom: 1rem;
         @include mobile-sub-header-font($secondary-color-BandSite-darkblack);
+        font-weight: 500;
+
+        @include desktop {
+          padding-top: 1rem;
+        }
       }
     }
 
@@ -69,16 +91,38 @@
         width: 7rem;
         padding-right: 5rem;
       }
-      &--title {
+
+      &--firsttitle {
         @include mobile-sub-header-font($primary-color-silver);
         @include tablet {
           padding-bottom: 1.5rem;
         }
       }
+
+      &--title {
+        @include mobile-sub-header-font($primary-color-silver);
+        @include tablet {
+          padding-bottom: 1.5rem;
+          display: none;
+        }
+        @include desktop {
+          display: none;
+        }
+      }
+      &--firstactualvalue {
+        padding-bottom: 1rem;
+        @include mobile-sub-header-font($secondary-color-BandSite-darkblack);
+        font-weight: 500;
+      }
+
       &--actualvalue {
         padding-bottom: 1rem;
         @include mobile-sub-header-font($secondary-color-BandSite-darkblack);
         font-weight: 500;
+
+        @include desktop {
+          padding-top: 1rem;
+        }
       }
     }
 
@@ -87,17 +131,39 @@
         width: 9rem;
         //padding-right: 2rem;
       }
-      &--title {
+
+      &--firsttitle {
         @include mobile-sub-header-font($primary-color-silver);
         @include tablet {
           padding-bottom: 1.5rem;
         }
       }
 
+      &--title {
+        @include mobile-sub-header-font($primary-color-silver);
+        @include tablet {
+          padding-bottom: 1.5rem;
+          display: none;
+        }
+        @include desktop {
+          display: none;
+        }
+      }
+
+      &--firstactualvalue {
+        padding-bottom: 1rem;
+        @include mobile-sub-header-font($secondary-color-BandSite-darkblack);
+        font-weight: 500;
+      }
+
       &--actualvalue {
         padding-bottom: 1rem;
         @include mobile-sub-header-font($secondary-color-BandSite-darkblack);
         font-weight: 500;
+
+        @include desktop {
+          padding-top: 1rem;
+        }
       }
     }
     &--btn {

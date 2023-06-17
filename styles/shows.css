@@ -64,23 +64,6 @@
   text-decoration: none;
   display: flex;
   justify-content: space-around;
-  width: 100%;
-  /* Add the following styles for the default underline on Biography */
-  /* Add the following styles to change the border-bottom on hover */
-}
-.topnav__link:hover:not(.topnav__link--active) {
-  border-bottom: 3px solid white;
-}
-.topnav__link--active {
-  border-bottom: 0.1875rem solid white;
-  font-weight: bold;
-  color: white;
-}
-.topnav__link--bio {
-  border-bottom: 3px solid white;
-}
-.topnav__link--hover:hover {
-  border-bottom: 3px solid white;
 }
 @media screen and (min-width: 768px) {
   .topnav__link {
@@ -92,11 +75,6 @@
     width: -moz-fit-content;
     width: fit-content;
   }
-  .topnav__link--active {
-    content: ""; /* This is necessary for the pseudo element to work. */
-    padding-bottom: 3rem;
-    width: 0%;
-  }
 }
 @media screen and (min-width: 1280px) {
   .topnav__link {
@@ -105,11 +83,6 @@
     width: -moz-fit-content;
     width: fit-content;
   }
-  .topnav__link--active {
-    content: ""; /* This is necessary for the pseudo element to work. */
-    padding-bottom: 3.1rem;
-    width: 0%;
-  }
 }
 @media screen and (min-width: 1280px) {
   .topnav {
@@ -117,6 +90,12 @@
     padding-right: 4rem;
     padding-left: 3rem;
   }
+}
+
+/* Change the color of links on hover */
+a:hover,
+a:visited {
+  border-bottom: 2px solid white;
 }
 
 html,
@@ -648,6 +627,9 @@ body {
     padding-right: 6rem;
   }
 }
+.shows__container__showsOuterContainer--selected {
+  background-color: #e1e1e1;
+}
 .shows__container__showsOuterContainer:hover {
   background-color: #fafafa;
 }
@@ -657,14 +639,23 @@ body {
     padding: 1rem 1.125rem;
   }
 }
-.shows__container__showsOuterContainer.selected {
-  background-color: #e1e1e1;
-}
 @media screen and (min-width: 768px) {
   .shows__container--date {
     width: 9rem;
     padding-left: 0;
     padding-right: 2rem;
+  }
+}
+.shows__container--date--firsttitle {
+  font-family: "Avenir Next";
+  color: #afafaf;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  .shows__container--date--firsttitle {
+    padding-bottom: 1.5rem;
   }
 }
 .shows__container--date--title {
@@ -677,7 +668,22 @@ body {
 @media screen and (min-width: 768px) {
   .shows__container--date--title {
     padding-bottom: 1.5rem;
+    display: none;
   }
+}
+@media screen and (min-width: 1280px) {
+  .shows__container--date--title {
+    display: none;
+  }
+}
+.shows__container--date--firstactualvalue {
+  padding-bottom: 1rem;
+  font-family: "Avenir Next";
+  color: #000000;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  font-weight: 500;
 }
 .shows__container--date--actualvalue {
   padding-bottom: 1rem;
@@ -686,11 +692,29 @@ body {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 600;
+  font-weight: 500;
+}
+@media screen and (min-width: 1280px) {
+  .shows__container--date--actualvalue {
+    padding-top: 1rem;
+  }
 }
 @media screen and (min-width: 768px) {
   .shows__container--venue {
     width: 7rem;
     padding-right: 5rem;
+  }
+}
+.shows__container--venue--firsttitle {
+  font-family: "Avenir Next";
+  color: #afafaf;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  .shows__container--venue--firsttitle {
+    padding-bottom: 1.5rem;
   }
 }
 .shows__container--venue--title {
@@ -703,7 +727,22 @@ body {
 @media screen and (min-width: 768px) {
   .shows__container--venue--title {
     padding-bottom: 1.5rem;
+    display: none;
   }
+}
+@media screen and (min-width: 1280px) {
+  .shows__container--venue--title {
+    display: none;
+  }
+}
+.shows__container--venue--firstactualvalue {
+  padding-bottom: 1rem;
+  font-family: "Avenir Next";
+  color: #000000;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  font-weight: 500;
 }
 .shows__container--venue--actualvalue {
   padding-bottom: 1rem;
@@ -714,9 +753,26 @@ body {
   font-weight: 600;
   font-weight: 500;
 }
+@media screen and (min-width: 1280px) {
+  .shows__container--venue--actualvalue {
+    padding-top: 1rem;
+  }
+}
 @media screen and (min-width: 768px) {
   .shows__container--location {
     width: 9rem;
+  }
+}
+.shows__container--location--firsttitle {
+  font-family: "Avenir Next";
+  color: #afafaf;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  .shows__container--location--firsttitle {
+    padding-bottom: 1.5rem;
   }
 }
 .shows__container--location--title {
@@ -729,7 +785,22 @@ body {
 @media screen and (min-width: 768px) {
   .shows__container--location--title {
     padding-bottom: 1.5rem;
+    display: none;
   }
+}
+@media screen and (min-width: 1280px) {
+  .shows__container--location--title {
+    display: none;
+  }
+}
+.shows__container--location--firstactualvalue {
+  padding-bottom: 1rem;
+  font-family: "Avenir Next";
+  color: #000000;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  font-weight: 500;
 }
 .shows__container--location--actualvalue {
   padding-bottom: 1rem;
@@ -739,6 +810,11 @@ body {
   line-height: 1.375rem;
   font-weight: 600;
   font-weight: 500;
+}
+@media screen and (min-width: 1280px) {
+  .shows__container--location--actualvalue {
+    padding-top: 1rem;
+  }
 }
 .shows__container--btn {
   display: flex;
@@ -799,7 +875,7 @@ body {
   .hero {
     background-size: cover;
     width: 100%;
-    height: 45vh;
+    height: 65vh;
     display: flex;
     align-items: center;
   }

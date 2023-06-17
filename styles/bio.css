@@ -64,23 +64,6 @@
   text-decoration: none;
   display: flex;
   justify-content: space-around;
-  width: 100%;
-  /* Add the following styles for the default underline on Biography */
-  /* Add the following styles to change the border-bottom on hover */
-}
-.topnav__link:hover:not(.topnav__link--active) {
-  border-bottom: 3px solid white;
-}
-.topnav__link--active {
-  border-bottom: 0.1875rem solid white;
-  font-weight: bold;
-  color: white;
-}
-.topnav__link--bio {
-  border-bottom: 3px solid white;
-}
-.topnav__link--hover:hover {
-  border-bottom: 3px solid white;
 }
 @media screen and (min-width: 768px) {
   .topnav__link {
@@ -92,11 +75,6 @@
     width: -moz-fit-content;
     width: fit-content;
   }
-  .topnav__link--active {
-    content: ""; /* This is necessary for the pseudo element to work. */
-    padding-bottom: 3rem;
-    width: 0%;
-  }
 }
 @media screen and (min-width: 1280px) {
   .topnav__link {
@@ -105,11 +83,6 @@
     width: -moz-fit-content;
     width: fit-content;
   }
-  .topnav__link--active {
-    content: ""; /* This is necessary for the pseudo element to work. */
-    padding-bottom: 3.1rem;
-    width: 0%;
-  }
 }
 @media screen and (min-width: 1280px) {
   .topnav {
@@ -117,6 +90,12 @@
     padding-right: 4rem;
     padding-left: 3rem;
   }
+}
+
+/* Change the color of links on hover */
+a:hover,
+a:visited {
+  border-bottom: 2px solid white;
 }
 
 html,
@@ -834,8 +813,6 @@ select {
   padding-bottom: 1rem;
 }
 .user-comments-container__outerdiv--deletebtnContainer {
-  padding-left: 3.4rem;
-  padding-top: 1rem;
   padding-bottom: 1rem;
 }
 .user-comments-container__outerdiv--deletebtn {

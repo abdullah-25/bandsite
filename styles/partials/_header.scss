@@ -5,6 +5,7 @@
   background: $primary-color-BandSite-black;
   overflow: hidden;
   height: auto;
+  //padding-bottom: 0.7rem;
 
   @include tablet {
     display: flex;
@@ -44,29 +45,8 @@
     display: flex;
     justify-content: space-around;
     //padding-bottom: 0.7rem;
-    width: 100%;
+    //width: 100%;
 
-    &:hover:not(&--active) {
-      border-bottom: 3px solid white;
-    }
-
-    &--active {
-      border-bottom: 0.1875rem solid white;
-      font-weight: bold;
-      color: white;
-    }
-
-    /* Add the following styles for the default underline on Biography */
-    &--bio {
-      border-bottom: 3px solid white;
-    }
-
-    /* Add the following styles to change the border-bottom on hover */
-    &--hover {
-      &:hover {
-        border-bottom: 3px solid white;
-      }
-    }
     @include tablet {
       display: flex;
       justify-content: flex-start;
@@ -74,23 +54,12 @@
       padding-top: 0.8rem;
       padding-bottom: 0rem;
       width: fit-content;
-
-      &--active {
-        content: ""; /* This is necessary for the pseudo element to work. */
-        padding-bottom: 3rem;
-        width: 0%;
-      }
     }
 
     @include desktop {
       padding-top: 0.1rem;
       padding-bottom: 0rem;
       width: fit-content;
-      &--active {
-        content: ""; /* This is necessary for the pseudo element to work. */
-        padding-bottom: 3.1rem;
-        width: 0%;
-      }
     }
   }
 
@@ -99,4 +68,10 @@
     padding-right: 4rem;
     padding-left: 3rem;
   }
+}
+
+/* Change the color of links on hover */
+a:hover,
+a:visited {
+  border-bottom: 2px solid white;
 }
