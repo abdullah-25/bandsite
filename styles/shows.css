@@ -650,7 +650,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   .shows__container--date {
-    width: 9rem;
+    width: 10rem;
     padding-left: 0;
     padding-right: 2rem;
   }
@@ -710,7 +710,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   .shows__container--venue {
-    width: 7rem;
+    width: 9rem;
     padding-right: 5rem;
   }
 }

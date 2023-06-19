@@ -1,17 +1,24 @@
 const urlIndex = "https://project-1-api.herokuapp.com/";
 const apiKeyIndex = "a64cef94-0295-4c01-8470-4e776116845e";
 
+// Get the parent container element for comments
 const parentClassUserComments = document.querySelector(
   ".user-comments-container"
 );
+
+// Get the form element for comment submission
 const formSubmission = document.querySelector(
   ".conversation__comment-contaier__comment-outer-container--form"
 );
+
+// Get the error elements for form validation
 const formErrorName = document.getElementById("name");
 const formErrorComment = document.getElementById("comment");
 
+// Array to store comments
 let conversationArray = [];
 
+// Retrieve comments from the API and sort them by timestamp in descending order
 axios.get(`${urlIndex}comments?api_key=${apiKeyIndex}`).then((response) => {
   conversationArray = response.data;
   conversationArray.sort(
@@ -21,11 +28,15 @@ axios.get(`${urlIndex}comments?api_key=${apiKeyIndex}`).then((response) => {
   displayComments();
 });
 
+// Event listener for form submission
 formSubmission.addEventListener("submit", (event) => {
   event.preventDefault();
+
+  // Get the name and comment values from the form
   const name = event.target.name.value.trim();
   const comment = event.target.comment.value.trim();
 
+  // Validate the form inputs
   if (name === "" || comment === "") {
     formErrorName.classList.add(
       "conversation__comment-contaier__comment-outer-container--form--error"
@@ -43,14 +54,18 @@ formSubmission.addEventListener("submit", (event) => {
     );
   }
 
+  // Create the current date
   const dateTime = new Date();
   const date = dateTime.toLocaleDateString();
 
+  // Add the comment to the UI
   addComment(name, date, comment);
 
+  // Send the comment data to the API
   axios
     .post(`${urlIndex}comments?api_key=${apiKeyIndex}`, { name, comment })
     .then((response) => {
+      // Add the new comment to the conversationArray and update the UI
       conversationArray.unshift(response.data);
       displayComments();
     })
@@ -58,11 +73,14 @@ formSubmission.addEventListener("submit", (event) => {
       console.error(error);
     });
 
+  // Clear the form inputs
   event.target.name.value = "";
   event.target.comment.value = "";
 });
 
+// Function to add a comment to the UI
 function addComment(name, date, comment) {
+  // Create and append the HTML elements for the comment
   const newImage = document.createElement("img");
   newImage.className = "user-comments-container__image-container--avatar";
 
@@ -120,24 +138,24 @@ function addComment(name, date, comment) {
   newHr.className = "user-comments-container__hr";
   newOuterDiv.appendChild(newHr);
 
+  // Append the comment elements to the parent container
   parentClassUserComments.appendChild(newOuterDiv);
   parentClassUserComments.appendChild(newHr);
 
+  // Event listener for the like button
   likebtn.addEventListener("click", () => {
     likebtn.innerHTML = `Like ${comment.likes + 1}`;
     comment.likes += 1;
   });
 
+  // Event listener for the delete button
   deletebtn.addEventListener("click", () => {
     newOuterDiv.remove();
-    const hr = document.querySelector(
-      ".conversation__comment-contaier--line-break"
-    );
 
+    // Delete the comment from the API and update the UI
     axios
       .delete(`${urlIndex}comments/${comment.id}/?api_key=${apiKeyIndex}`)
       .then((response) => {
-        console.log(comment.id);
         conversationArray = conversationArray.filter(
           (com) => com.id !== comment.id
         );
@@ -149,10 +167,13 @@ function addComment(name, date, comment) {
   });
 }
 
+// Function to display the comments
 function displayComments() {
   console.log("display comments");
+  // Clear the parent container
   parentClassUserComments.innerHTML = "";
 
+  // Loop through the conversationArray and create the comment elements
   for (let i = 0; i < conversationArray.length; i++) {
     const comment = conversationArray[i];
 
@@ -214,32 +235,24 @@ function displayComments() {
     newHr.className = "user-comments-container__hr";
     newOuterDiv.appendChild(newHr);
 
+    // Append the comment elements to the parent container
     parentClassUserComments.appendChild(newOuterDiv);
     parentClassUserComments.appendChild(newHr);
 
+    // Event listener for the like button
     likebtn.addEventListener("click", () => {
       likebtn.innerHTML = `Like ${comment.likes + 1}`;
       comment.likes += 1;
-      axios
-        .put(`${urlIndex}comments/${comment.id}/like?api_key=${apiKeyIndex}`)
-        .then((response) => {
-          console.log(response.data);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
     });
 
+    // Event listener for the delete button
     deletebtn.addEventListener("click", () => {
       newOuterDiv.remove();
-      const hr = document.querySelector(
-        ".conversation__comment-contaier--line-break"
-      );
 
+      // Delete the comment from the API and update the UI
       axios
         .delete(`${urlIndex}comments/${comment.id}/?api_key=${apiKeyIndex}`)
         .then((response) => {
-          console.log(comment.id);
           conversationArray = conversationArray.filter(
             (com) => com.id !== comment.id
           );

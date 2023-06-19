@@ -46,7 +46,7 @@
 
     &--date {
       @include tablet {
-        width: 9rem;
+        width: 10rem;
         padding-left: 0;
         padding-right: 2rem;
       }
@@ -88,7 +88,7 @@
 
     &--venue {
       @include tablet {
-        width: 7rem;
+        width: 9rem;
         padding-right: 5rem;
       }
 
