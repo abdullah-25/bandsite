@@ -117,6 +117,7 @@ function addComment(name, date, comment) {
   newOuterDiv.appendChild(deletebtnContainer);
 
   const newHr = document.createElement("hr");
+  newHr.className = "user-comments-container__hr";
   newOuterDiv.appendChild(newHr);
 
   parentClassUserComments.appendChild(newOuterDiv);
@@ -210,6 +211,7 @@ function displayComments() {
     newOuterDiv.appendChild(deletebtnContainer);
 
     const newHr = document.createElement("hr");
+    newHr.className = "user-comments-container__hr";
     newOuterDiv.appendChild(newHr);
 
     parentClassUserComments.appendChild(newOuterDiv);

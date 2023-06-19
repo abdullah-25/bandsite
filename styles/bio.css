@@ -16,86 +16,95 @@
   font-weight: 600;
   font-weight: normal;
 }
-.topnav {
-  background: #323232;
-  overflow: hidden;
-  height: auto;
-}
-@media screen and (min-width: 768px) {
-  .topnav {
-    display: flex;
-    padding-left: 2.25rem;
-    height: 9vh;
-  }
-  .topnav__logo {
-    padding-right: 2.8rem;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .topnav {
-    font-family: "Avenir Next";
-    color: white;
-    font-size: 0.75rem;
-    line-height: 1.25rem;
-    font-weight: bold;
-    height: 8vh;
-    padding-top: 1.5rem;
-    padding-left: 5rem;
-  }
-  .topnav__logo {
-    padding-right: 2.8rem;
-    padding-left: 2.8rem;
-  }
-}
-.topnav__logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  color: white;
-}
-.topnav__link {
-  font-family: "Avenir Next";
-  color: white;
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  font-weight: 600;
-  text-decoration: none;
-  display: flex;
-  justify-content: space-around;
-}
-@media screen and (min-width: 768px) {
-  .topnav__link {
-    display: flex;
-    justify-content: flex-start;
-    padding-right: 6rem;
-    padding-top: 0.8rem;
-    padding-bottom: 0rem;
-    width: -moz-fit-content;
-    width: fit-content;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .topnav__link {
-    padding-top: 0.1rem;
-    padding-bottom: 0rem;
-    width: -moz-fit-content;
-    width: fit-content;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .topnav {
-    height: 5vh;
-    padding-right: 4rem;
-    padding-left: 3rem;
-  }
+* {
+  margin: 0;
+  padding: 0;
 }
 
-/* Change the color of links on hover */
-a:hover,
-a:visited {
-  border-bottom: 2px solid white;
+.nav {
+  background-color: #323232;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .nav {
+    flex-direction: row;
+    height: 8vh;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .nav {
+    height: 8.5vh;
+  }
+}
+.nav__logo {
+  padding-top: 1rem;
+  padding-bottom: 0.25rem;
+  height: 1.25rem;
+  width: 7.5rem;
+}
+@media screen and (min-width: 768px) {
+  .nav__logo {
+    font-size: 1.5rem;
+    padding: 1.5rem 0;
+    padding-left: 5vw;
+    padding-right: 4rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .nav__logo {
+    padding-left: 7vw;
+  }
+}
+.nav__links {
+  width: 100%;
+  display: flex;
+  list-style-type: none;
+}
+@media screen and (min-width: 768px) {
+  .nav__links {
+    width: auto;
+    padding-left: 0;
+    padding-bottom: 3rem;
+    height: 100%;
+  }
+}
+.nav__link--container {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  padding-bottom: 1.5vw;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 768px) {
+  .nav__link--container {
+    margin-right: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 2.5rem;
+  }
+}
+.nav__link--container:hover {
+  border-bottom: 0.2rem solid #fff;
+}
+.nav__link--container--active {
+  border-bottom: 0.2rem solid #fff;
+}
+.nav__link {
+  font-size: 0.813rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: #afafaf;
+  padding-bottom: 0.3rem;
+}
+@media screen and (min-width: 768px) {
+  .nav__link {
+    font-size: 0.875rem;
+  }
+}
+.nav__link--active {
+  font-weight: 600;
+  color: #fff;
 }
 
 html,
@@ -818,6 +827,9 @@ select {
 .user-comments-container__outerdiv--deletebtn {
   margin-left: 2rem;
   margin-top: 1rem;
+}
+.user-comments-container__hr {
+  margin-bottom: 1rem;
 }
 .user-comments-container__name-email-div {
   display: flex;

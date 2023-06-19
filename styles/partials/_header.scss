@@ -1,77 +1,95 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
-.topnav {
-  background: $primary-color-BandSite-black;
-  overflow: hidden;
-  height: auto;
-  //padding-bottom: 0.7rem;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.nav {
+  background-color: $primary-color-BandSite-black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //height: 10.5vh;
 
   @include tablet {
-    display: flex;
-    padding-left: 2.25rem;
-    height: 9vh;
-
-    &__logo {
-      padding-right: 2.8rem;
-    }
-  }
-
-  @include desktop {
-    @include desktop-tablet-labels-btn(white);
+    flex-direction: row;
     height: 8vh;
-    padding-top: 1.5rem;
-    padding-left: 5rem;
-    //padding-bottom: 1rem;
-
-    &__logo {
-      padding-right: 2.8rem;
-      padding-left: 2.8rem;
-    }
+  }
+  @include desktop {
+    height: 8.5vh;
   }
 
   &__logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding-top: 1rem;
-    padding-bottom: 1rem;
-    color: white;
-  }
-
-  &__link {
-    @include mobile-sub-header-font(white);
-    text-decoration: none;
-    display: flex;
-    justify-content: space-around;
-    //padding-bottom: 0.7rem;
-    //width: 100%;
+    padding-bottom: 0.25rem;
+    height: 1.25rem;
+    width: 7.5rem;
 
     @include tablet {
-      display: flex;
-      justify-content: flex-start;
-      padding-right: 6rem;
-      padding-top: 0.8rem;
-      padding-bottom: 0rem;
-      width: fit-content;
+      font-size: 1.5rem;
+      padding: 1.5rem 0;
+      padding-left: 5vw;
+      padding-right: 4rem;
     }
 
     @include desktop {
-      padding-top: 0.1rem;
-      padding-bottom: 0rem;
-      width: fit-content;
+      padding-left: 7vw;
     }
   }
 
-  @include desktop {
-    height: 5vh;
-    padding-right: 4rem;
-    padding-left: 3rem;
-  }
-}
+  &__links {
+    width: 100%;
+    display: flex;
+    list-style-type: none;
 
-/* Change the color of links on hover */
-a:hover,
-a:visited {
-  border-bottom: 2px solid white;
+    @include tablet {
+      width: auto;
+      padding-left: 0;
+      padding-bottom: 3rem;
+      // height: 0.1rem;
+      //align-self: flex-end;
+      height: 100%;
+    }
+  }
+
+  &__link--container {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    padding-bottom: 1.5vw;
+    box-sizing: border-box;
+
+    @include tablet {
+      margin-right: 3rem;
+      //padding-bottom: 1.8rem;
+      padding-top: 3rem;
+      padding-bottom: 2.5rem;
+
+      //align-items: baseline;
+      //margin-bottom: 0;
+    }
+  }
+  &__link--container:hover {
+    border-bottom: 0.2rem solid #fff;
+  }
+  &__link--container--active {
+    border-bottom: 0.2rem solid #fff;
+  }
+  &__link {
+    font-size: 0.813rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: #afafaf;
+    padding-bottom: 0.3rem;
+
+    @include tablet {
+      font-size: 0.875rem;
+    }
+  }
+  &__link--active {
+    font-weight: 600;
+    color: #fff;
+  }
 }
