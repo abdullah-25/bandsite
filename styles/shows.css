@@ -709,12 +709,12 @@ body {
   }
 }
 @media screen and (min-width: 768px) {
-  .shows__container--venue {
+  .shows__container--veue {
     width: 9rem;
     padding-right: 5rem;
   }
 }
-.shows__container--venue--firsttitle {
+.shows__container--veue--firsttitle {
   font-family: "Avenir Next";
   color: #afafaf;
   font-size: 0.875rem;
@@ -722,11 +722,11 @@ body {
   font-weight: 600;
 }
 @media screen and (min-width: 768px) {
-  .shows__container--venue--firsttitle {
+  .shows__container--veue--firsttitle {
     padding-bottom: 1.5rem;
   }
 }
-.shows__container--venue--title {
+.shows__container--veue--title {
   font-family: "Avenir Next";
   color: #afafaf;
   font-size: 0.875rem;
@@ -734,17 +734,17 @@ body {
   font-weight: 600;
 }
 @media screen and (min-width: 768px) {
-  .shows__container--venue--title {
+  .shows__container--veue--title {
     padding-bottom: 1.5rem;
     display: none;
   }
 }
 @media screen and (min-width: 1280px) {
-  .shows__container--venue--title {
+  .shows__container--veue--title {
     display: none;
   }
 }
-.shows__container--venue--firstactualvalue {
+.shows__container--veue--firstactualvalue {
   padding-bottom: 1rem;
   font-family: "Avenir Next";
   color: #000000;
@@ -753,7 +753,7 @@ body {
   font-weight: 600;
   font-weight: 500;
 }
-.shows__container--venue--actualvalue {
+.shows__container--veue--actualvalue {
   padding-bottom: 1rem;
   font-family: "Avenir Next";
   color: #000000;
@@ -763,7 +763,7 @@ body {
   font-weight: 500;
 }
 @media screen and (min-width: 1280px) {
-  .shows__container--venue--actualvalue {
+  .shows__container--veue--actualvalue {
     padding-top: 1rem;
   }
 }
